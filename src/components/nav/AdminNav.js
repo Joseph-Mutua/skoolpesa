@@ -190,7 +190,7 @@ const AdminNav = () => {
             </Menu>
           </Box>
           <Box sx={{ display: "flex-end", ml: 1 }}>
-            <p style={{ fontSize: "1rem", marginBottom: -9 }}>Joseph Mutua</p>
+            <p style={{ fontSize: "1rem", marginBottom: -10 }}>Joseph Mutua</p>
             <p style={{ fontSize: "0.9rem" }}>Administrator</p>
           </Box>
         </Toolbar>

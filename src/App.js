@@ -7,7 +7,7 @@ import Fees from "./components/adminuser/Fees"
 import Invoices from "./components/adminuser/Invoices"
 import Reports from "./components/adminuser/Reports"
 import Students from "./components/adminuser/Students"
-import Users from "./components/adminuser/Students"
+import Users from "./components/adminuser/Users"
 import AdminNav from './components/nav/AdminNav';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <Container maxWidth="xl">
       <Routes>
         <Route path="/" element={<Dashboard/>}></Route>
-        <Route path="/admin/Dashboard" element={<Dashboard/>}></Route>
+        <Route path="/admin/dashboard" element={<Dashboard/>}></Route>
         <Route path="/admin/students" element={<Students/>}></Route>
         <Route path="/admin/invoices" element={<Invoices/>}></Route>
         <Route path="/admin/fees" element={<Fees/>}></Route>
