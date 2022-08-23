@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       {/* <ResponsiveAppBar /> */}
       <Container maxWidth="xl">
-        <h1>This is the SKOOLPESA App</h1>
+        <h1>This is the Skoolpesa App</h1>
       </Container>
     </div>
   );
