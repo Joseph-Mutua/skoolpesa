@@ -11,7 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
 import CircleNotificationsOutlinedIcon from "@mui/icons-material/CircleNotificationsOutlined";
 import { Link } from "react-router-dom";
@@ -42,6 +41,8 @@ const AdminNav = () => {
     <AppBar position="static" sx={{ height: 80 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          {/* SKOOLPESA LOGO ON SCREEN SIZE ABOVE MD */}
+
           <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
             <img
               alt="SkoolPesa"
@@ -49,6 +50,8 @@ const AdminNav = () => {
               style={{ width: "150px", height: "30px", marginRight: "20px" }}
             ></img>
           </Box>
+
+          {/* MENU BUTTONS ICON ON DROPDOWN */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -61,6 +64,9 @@ const AdminNav = () => {
             >
               <MenuIcon />
             </IconButton>
+
+            {/* MENU BUTTONS ON SCREEN BELOW MD */}
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -93,25 +99,9 @@ const AdminNav = () => {
               ))}
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-          {/* <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography> */}
+
+          {/* SKOOLPESA LOGO ON SCREEN SIZE BELOW MD*/}
+
           <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
             {" "}
             <img
@@ -120,6 +110,8 @@ const AdminNav = () => {
               style={{ width: "150px", height: "30px", marginRight: "20px" }}
             ></img>
           </Box>
+
+          {/* MENU BUTTONS ON SCREEN ABOVE MD */}
 
           <Box
             sx={{
@@ -136,6 +128,7 @@ const AdminNav = () => {
                   fontSize: "1rem",
                   textTransform: "none",
                   my: 2,
+                  mr: 2,
                   color: "white",
                   display: "block",
                 }}
@@ -150,6 +143,8 @@ const AdminNav = () => {
             ))}
           </Box>
 
+          {/* NOTIFICATION, TUNE AND PROFILE ICONS  */}
+
           <Box sx={{ flexGrow: 0 }}>
             <IconButton sx={{ color: "white" }}>
               <CircleNotificationsOutlinedIcon />
@@ -163,6 +158,8 @@ const AdminNav = () => {
                 <Avatar alt="Joseph Mutua" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
+
+            {/* PROFILE SETTINGS ON DROP DOWN */}
 
             <Menu
               sx={{ mt: "45px" }}
