@@ -39,10 +39,16 @@ const AdminNav = () => {
   };
 
   return (
-    <AppBar position="static" sx={{height: 80}}>
+    <AppBar position="static" sx={{ height: 80 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img alt="SkoolPesa" src={process.env.PUBLIC_URL+"/images/logo.png"} style={{width: "150px", height:"30px", marginRight: "20px"}}></img>
+          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+            <img
+              alt="SkoolPesa"
+              src={process.env.PUBLIC_URL + "/images/logo.png"}
+              style={{ width: "150px", height: "30px", marginRight: "20px" }}
+            ></img>
+          </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -87,8 +93,8 @@ const AdminNav = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+          {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -105,7 +111,16 @@ const AdminNav = () => {
             }}
           >
             LOGO
-          </Typography>
+          </Typography> */}
+          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
+            {" "}
+            <img
+              alt="SkoolPesa"
+              src={process.env.PUBLIC_URL + "/images/logo.png"}
+              style={{ width: "150px", height: "30px", marginRight: "20px" }}
+            ></img>
+          </Box>
+
           <Box
             sx={{
               textTransform: "none",
