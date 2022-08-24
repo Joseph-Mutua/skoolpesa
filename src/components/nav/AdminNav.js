@@ -38,7 +38,7 @@ const AdminNav = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ height: 80 }}>
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* SKOOLPESA LOGO ON SCREEN SIZE ABOVE MD */}
@@ -65,7 +65,7 @@ const AdminNav = () => {
               <MenuIcon />
             </IconButton>
 
-            {/* MENU BUTTONS ON SCREEN BELOW MD */}
+            {/* MENU APPBAR ICON ON SCREEN BELOW MD */}
 
             <Menu
               id="menu-appbar"
@@ -85,6 +85,8 @@ const AdminNav = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
+              {/* MENU BUTTONS ON SCREEN BELOW MD */}
+
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
@@ -102,12 +104,18 @@ const AdminNav = () => {
 
           {/* SKOOLPESA LOGO ON SCREEN SIZE BELOW MD*/}
 
-          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
+          <Box
+            sx={{
+             
+              display: { xs: "flex", md: "none" },
+    
+            }}
+          >
             {" "}
             <img
               alt="SkoolPesa"
               src={process.env.PUBLIC_URL + "/images/logo.png"}
-              style={{ width: "150px", height: "30px", marginRight: "20px" }}
+              style={{ width: "150px", height: "30px", justify:"center", marginRight: "80px", marginLeft: "50px"  }}
             ></img>
           </Box>
 
@@ -145,7 +153,7 @@ const AdminNav = () => {
 
           {/* NOTIFICATION, TUNE AND PROFILE ICONS  */}
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ display: "flex", flexGrow: 0 }}>
             <IconButton sx={{ color: "white" }}>
               <CircleNotificationsOutlinedIcon />
             </IconButton>
