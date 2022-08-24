@@ -20,46 +20,29 @@ const pages = ["Dashboard", "Students", "Invoices", "Fees", "Reports", "Users"];
 const settings = ["View Profile", "Logout", "Deactivate Account"];
 
 const AdminNav = () => {
-   const [anchorElNav, setAnchorElNav] = React.useState(null);
-   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-   const handleOpenNavMenu = (event) => {
-     setAnchorElNav(event.currentTarget);
-   };
-   const handleOpenUserMenu = (event) => {
-     setAnchorElUser(event.currentTarget);
-   };
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
-   const handleCloseNavMenu = () => {
-     setAnchorElNav(null);
-   };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-   const handleCloseUserMenu = () => {
-     setAnchorElUser(null);
-   };
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{height: 80}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+          <img alt="SkoolPesa" src={process.env.PUBLIC_URL+"/images/logo.png"} style={{width: "150px", height:"30px", marginRight: "20px"}}></img>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -135,6 +118,7 @@ const AdminNav = () => {
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{
+                  fontSize: "1rem",
                   textTransform: "none",
                   my: 2,
                   color: "white",
@@ -151,7 +135,6 @@ const AdminNav = () => {
             ))}
           </Box>
 
-          <Box></Box>
           <Box sx={{ flexGrow: 0 }}>
             <IconButton sx={{ color: "white" }}>
               <CircleNotificationsOutlinedIcon />
@@ -190,8 +173,10 @@ const AdminNav = () => {
             </Menu>
           </Box>
           <Box sx={{ display: "flex-end", ml: 1 }}>
-            <p style={{ fontSize: "1rem", marginBottom: -10 }}>Joseph Mutua</p>
-            <p style={{ fontSize: "0.9rem" }}>Administrator</p>
+            <p style={{ fontSize: "1rem", fontWeight: 200, marginBottom: -10 }}>
+              Joseph Mutua
+            </p>
+            <p style={{ fontSize: "0.9rem", fontWeight: 100 }}>Administrator</p>
           </Box>
         </Toolbar>
       </Container>
