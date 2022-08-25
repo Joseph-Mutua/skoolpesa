@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Stack, Box, useTheme, Typography } from "@mui/material";
+import { Stack, Box,  Typography } from "@mui/material";
 import { FormControl, OutlinedInput, Grid } from "@mui/material";
 
 const AdminDashboard = () => {
-  const theme = useTheme();
 
   return (
     <Box
@@ -21,10 +20,10 @@ const AdminDashboard = () => {
       <Grid container spacing={4}>
         <Grid xs={4} md={4}>
           <Stack
-            display={{ xs: "none", lg: "block" }}
+            display={{ xs: "none", md: "block" }}
             justifyContent="flex-start"
             alignItems="flex-start"
-            sx={{ ml: 6, border: 2, borderColor: "red" }}
+            sx={{ ml: 6 }}
           >
             <Typography
               align="start"
@@ -55,12 +54,12 @@ const AdminDashboard = () => {
 
         <Grid xs={8} md={8} sx={{ flexGrow: 1 }}>
           <Stack justifyContent="flex-end" alignItems="flex-end" sx={{ mr: 4 }}>
-            <FormControl>
+            <FormControl sx={{  }}>
               <OutlinedInput
-               display="flex"
+              display="block"
                 sx={{
+                  width: "560px",
                   mt: 10,
-                  maxWidth: "80%",
                   backgroundColor: "#fff",
                   borderRadius: 2,
                 }}
