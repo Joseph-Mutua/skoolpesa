@@ -1,8 +1,10 @@
 import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
-import {Box, Typography} from "@mui/material";
+import { Box, Typography, Button, IconButton } from "@mui/material";
 import FeeChart from "../../../common/FeeChart";
 import PaidUpPieChart from "../../../common/PaidUpPieChart";
+
+import CreditScoreIcon from "@mui/icons-material/CreditScore";
 
 const SchoolFeeChart = () => {
   return (
@@ -16,20 +18,51 @@ const SchoolFeeChart = () => {
         </Grid>
 
         <Grid xs={3}>
+          {/*  */}
+
           <Box sx={{ boxShadow: 2 }}>
-            {" "}
-            <Typography
-              align="center"
-              variant="h5"
-              sx={{
-                ml: 2,
-                mt: 1,
-                color: "black",
-                fontWeight: 600,
-              }}
+            <Box
+              component="span"
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              sx={{}}
             >
-              Number of Students with Paid Up Fees
-            </Typography>
+              <IconButton
+                variant="contained"
+                color="primary"
+                fontSize="large"
+                sx={{ m: 2, backgroundColor: "#d3ffd8", borderRadius: 0 }}
+              >
+                <CreditScoreIcon />
+              </IconButton>
+
+              <Box>
+                <Typography
+                  align="center"
+                  sx={{
+                    mb: -2,
+                    mr: 18,
+                    color: "black",
+                    fontWeight: 300,
+                    letterSpacing: "0.003rem",
+                  }}
+                >
+                  <p>Total School Fees</p>
+                </Typography>
+                <Typography
+                  align="center"
+                  sx={{
+                    mr: 20,
+                    color: "black",
+                    fontWeight: 300,
+                    letterSpacing: "0.003rem",
+                  }}
+                >
+                  <h2>$159790</h2>
+                </Typography>
+              </Box>
+            </Box>
           </Box>
           <Box sx={{ boxShadow: 2, mt: 2 }}>
             <Box>
@@ -41,13 +74,15 @@ const SchoolFeeChart = () => {
                   ml: 2,
                   mt: 1,
                   color: "black",
-                  fontWeight: 600,
+                  
                   letterSpacing: "0.003rem",
                 }}
               >
-                <bold>Number of Students <br></br>with Paid Up Fees</bold>
+                <h4>
+                  Number of Students <br></br>with Paid Up Fees
+                </h4>
               </Typography>
-            </Box>
+            </Box>  
             <PaidUpPieChart />
           </Box>
         </Grid>
