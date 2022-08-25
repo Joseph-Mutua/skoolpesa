@@ -9,7 +9,7 @@ const AdminDashboardOverview = () => {
         mt: 6,
         width: "100%",
         height: 160,
-        boxShadow: 10,
+        boxShadow: 2,
         borderRadius: 2,
 
         background:
