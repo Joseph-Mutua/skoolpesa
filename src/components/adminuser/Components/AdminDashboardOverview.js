@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Stack, Box,  Typography } from "@mui/material";
+import { Stack, Box, Typography } from "@mui/material";
 import { FormControl, OutlinedInput, Grid } from "@mui/material";
 
-const AdminDashboard = () => {
-
+const AdminDashboardOverview = () => {
   return (
     <Box
       sx={{
@@ -54,9 +53,9 @@ const AdminDashboard = () => {
 
         <Grid xs={8} md={8} sx={{ flexGrow: 1 }}>
           <Stack justifyContent="flex-end" alignItems="flex-end" sx={{ mr: 4 }}>
-            <FormControl sx={{  }}>
+            <FormControl sx={{}}>
               <OutlinedInput
-              display="block"
+                display="block"
                 sx={{
                   width: "560px",
                   mt: 10,
@@ -78,4 +77,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default AdminDashboardOverview;
