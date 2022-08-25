@@ -6,23 +6,23 @@ const AdminDashboard = () => {
 
   return (
     <Box
+
+      display="flex"
       sx={{
-        display: "flex",
-        "& > :not(style)": {
-          m: 1,
-          width: "100%",
-          height: 128,
-          boxShadow: 10,
-          backgroundColor: `${theme.palette.primary.main}`,
-        },
+        mt: 2,
+        width: "100%",
+        height: 180,
+        boxShadow: 10,
+        borderRadius: 2,
+         background:"linear-gradient(90deg, rgba(36,93,163,1) 0%, rgba(117,170,203,1) 50%, rgba(36,93,163,1) 100%)"
       }}
     >
       <Stack
-        m={1}
+        m={2}
         display="flex"
         justifyContent="flex-start"
         alignItems="flex-start"
-        sx={{ bgcolor: "red" }}
+        sx={{ border: 2, borderColor: "red" }}
       >
         <Typography
           align="left"
@@ -38,18 +38,21 @@ const AdminDashboard = () => {
         </Typography>
         <Typography
           align="left"
-          variant="h4"
+          variant="h5"
           sx={{
             ml: 2,
-            mt: 2,
+            mt: 1,
             color: "white",
-            fontWeight: 600,
+            fontWeight: 400,
           }}
         >
           Overview
         </Typography>
         ;
       </Stack>
+      <Box>
+        <h1>Stack stop pushing me</h1>
+      </Box>
     </Box>
   );
 };

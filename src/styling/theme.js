@@ -4,7 +4,7 @@ import { createTheme } from "@mui/material";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#356CB0",
+      main: "#245da3",
       light: "#75AACB",
     },
   },
@@ -13,17 +13,17 @@ const theme = createTheme({
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
-    fontWeightBold: 700
+    fontWeightBold: 700,
   },
-//   components: {
-//     AppBar:{
-//         styleOverrides:{
-//             dense:{
-//                 minHeight: 400
-//             }
-//         }
-//     }
-//   }
+  //   components: {
+  //     AppBar:{
+  //         styleOverrides:{
+  //             dense:{
+  //                 minHeight: 400
+  //             }
+  //         }
+  //     }
+  //   }
 });
 
 export default theme;
