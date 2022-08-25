@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
 import CircleNotificationsOutlinedIcon from "@mui/icons-material/CircleNotificationsOutlined";
+
 import { Link } from "react-router-dom";
 
 const pages = ["Dashboard", "Students", "Invoices", "Fees", "Reports", "Users"];
@@ -31,6 +32,7 @@ const AdminNav = () => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+
   };
 
   const handleCloseUserMenu = () => {
@@ -106,16 +108,19 @@ const AdminNav = () => {
 
           <Box
             sx={{
-             
               display: { xs: "flex", md: "none" },
-    
             }}
           >
-            {" "}
             <img
               alt="SkoolPesa"
               src={process.env.PUBLIC_URL + "/images/logo.png"}
-              style={{ width: "150px", height: "30px", justify:"center", marginRight: "80px", marginLeft: "50px"  }}
+              style={{
+                width: "150px",
+                height: "30px",
+                justify: "center",
+                marginRight: "80px",
+                marginLeft: "50px",
+              }}
             ></img>
           </Box>
 
@@ -135,10 +140,14 @@ const AdminNav = () => {
                 sx={{
                   fontSize: "1rem",
                   textTransform: "none",
+                  color: "white",
                   my: 2,
                   mr: 2,
-                  color: "white",
                   display: "block",
+                  "&:hover,&:focus": {
+                    color: "red",
+                    backgroundColor: "red",
+                  },
                 }}
               >
                 <Link
@@ -192,7 +201,7 @@ const AdminNav = () => {
               ))}
             </Menu>
           </Box>
-          <Box sx={{ display: "flex-end", ml: 1 }}>
+          <Box sx={{ display: "flex-end", xs: "none", md: "flex", ml: 1 }}>
             <p style={{ fontSize: "1rem", fontWeight: 200, marginBottom: -10 }}>
               Joseph Mutua
             </p>

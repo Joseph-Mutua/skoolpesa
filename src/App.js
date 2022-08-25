@@ -2,7 +2,7 @@ import './App.css';
 import Container from "@mui/material/Container";
 import {Route, Routes} from "react-router-dom"
 
-import Dashboard from "./components/adminuser/Dashboard"
+import AdminDashboard from "./components/adminuser/Dashboard"
 import Fees from "./components/adminuser/Fees"
 import Invoices from "./components/adminuser/Invoices"
 import Reports from "./components/adminuser/Reports"
@@ -16,8 +16,8 @@ function App() {
       <AdminNav/>
       <Container maxWidth="xl">
       <Routes>
-        <Route path="/" element={<Dashboard/>}></Route>
-        <Route path="/admin/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/" element={<AdminDashboard/>}></Route>
+        <Route path="/admin/dashboard" element={<AdminDashboard/>}></Route>
         <Route path="/admin/students" element={<Students/>}></Route>
         <Route path="/admin/invoices" element={<Invoices/>}></Route>
         <Route path="/admin/fees" element={<Fees/>}></Route>
