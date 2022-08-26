@@ -2,7 +2,7 @@ import './App.css';
 import Container from "@mui/material/Container";
 import {Route, Routes} from "react-router-dom"
 
-import AdminDashboard from "./components/adminuser/Components/AdminDashboard"
+import AdminDashboard from "./components/adminuser/Dashboard/AdminDashboard"
 import Fees from "./components/adminuser/Fees"
 import Invoices from "./components/adminuser/Invoices"
 import Reports from "./components/adminuser/Reports"
