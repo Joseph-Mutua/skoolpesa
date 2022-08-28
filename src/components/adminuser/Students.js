@@ -1,5 +1,5 @@
 import * as React from "react";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid,} from "@mui/x-data-grid";
 import { Button, IconButton, Menu, MenuItem } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import FormControl from "@mui/material/FormControl";
@@ -8,7 +8,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import { Box, Typography } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AddIcon from "@mui/icons-material/Add";
-import { DataGridPro } from "@mui/x-data-grid-pro";
+
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const actions = ["View", "Send Reminder", "Print"];

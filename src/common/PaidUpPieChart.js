@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+
 import { Pie } from "@ant-design/plots";
 
 const PaidUpPieChart = () => {
