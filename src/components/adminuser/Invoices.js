@@ -569,10 +569,10 @@ const Invoices = () => {
             display="flex"
             justifyContent="flex-start"
             alignItems="center"
-            sx={{ ml: 3, border: 2, borderColor: "red" }}
+            sx={{ ml: 3}}
           >
-            <Typography>
-              <h2>Outstanding Invoices</h2>
+            <Typography variant="h5" style={{fontWeight: 600, fontFamily: "sans-serif"}} >
+              <p>Outstanding Invoices</p>
             </Typography>
           </Box>
 
