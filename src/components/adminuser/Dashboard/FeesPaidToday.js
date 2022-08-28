@@ -20,7 +20,7 @@ export default function FeesPaidToday() {
     {
       field: "studentName",
       headerName: "Student Name",
-      width: 200,
+      width: 450,
       renderCell: (params) => {
         console.log(params);
         return (
@@ -31,21 +31,21 @@ export default function FeesPaidToday() {
         );
       },
     },
-    { field: "studentID", headerName: "Student ID", width: 130 },
+    { field: "studentID", headerName: "Student ID", width: 250 },
     {
       field: "class",
       headerName: "Class/Stream",
-      width: 90,
+      width: 250,
     },
     {
       field: "feesPaid",
       headerName: "Fees Paid",
-      width: 100,
+      width: 200,
     },
     {
       field: "balance",
       headerName: "Balance",
-      width: 100,
+      width: 200,
     },
     {
       field: "action",
