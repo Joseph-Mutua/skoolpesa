@@ -25,9 +25,7 @@ const SchoolFeeChart = () => {
               >
                 <h4>Amount of School Fees Paid</h4>
               </Typography>
-             <Button align="end">
-                
-             </Button>
+  
             </Box>
             <Box>
               {" "}

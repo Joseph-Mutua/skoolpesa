@@ -2,3 +2,4 @@
   text-align: center;
 }
 
+.MuiDataGrid-root .MuiDataGrid-cell {border-bottom: none !important;}
