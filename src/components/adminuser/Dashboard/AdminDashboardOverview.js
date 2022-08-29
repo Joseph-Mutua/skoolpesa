@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Stack, Box, Typography } from "@mui/material";
-import { FormControl, OutlinedInput, Grid } from "@mui/material";
-
+import { FormControl, OutlinedInput, Grid, InputAdornment } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 const AdminDashboardOverview = () => {
   return (
     <Box
@@ -63,8 +63,13 @@ const AdminDashboardOverview = () => {
                   borderRadius: 2,
                 }}
                 id="outlined-adornment-weight"
-                placeholder="Search For a School"
+                placeholder="Search For Something"
                 aria-describedby="outlined-weight-helper-text"
+                startAdornment={
+                  <InputAdornment>
+                    <SearchIcon />
+                  </InputAdornment>
+                }
                 inputProps={{
                   "aria-label": "Anything",
                 }}

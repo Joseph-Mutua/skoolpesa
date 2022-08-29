@@ -25,10 +25,9 @@ const SchoolFeeChart = () => {
               >
                 <h4>Amount of School Fees Paid</h4>
               </Typography>
-  
             </Box>
             <Box>
-              {" "}
+         
               <FeeChart />
             </Box>
           </Box>
@@ -91,18 +90,31 @@ const SchoolFeeChart = () => {
                 align="center"
                 variant="h5"
                 sx={{
-                  m: 2,
+                  fontWeight: 600,
+                  mt: 4,
                   height: "90px",
                   color: "black",
                   letterSpacing: "0.003rem",
                 }}
               >
-                <h4>
-                  Number of Students <br></br>with Paid Up Fees
-                </h4>
+                <p>
+                  Number of Students <br></br>with{" "}
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      textDecoration: "underline",
+                      fontWeight: 600,
+           
+                    }}
+                    display="inline"
+                  >
+                    Paid Up
+                  </Typography>{" "}
+                  Fees
+                </p>
               </Typography>
             </Box>
-            <Box sx={{ mt: -5 }}>
+            <Box sx={{ mt: -5, height: "415px"}}>
               <PaidUpPieChart />
             </Box>
           </Box>

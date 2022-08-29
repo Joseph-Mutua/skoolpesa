@@ -1,15 +1,23 @@
 import * as React from "react";
 import { DataGrid,} from "@mui/x-data-grid";
 import { Button, IconButton, Menu, MenuItem } from "@mui/material";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import { Box, Typography } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AddIcon from "@mui/icons-material/Add";
-
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+
+export function SortedDescendingIcon() {
+  return <ArrowDropDownIcon className="icon" />;
+}
+
+export function SortedAscendingIcon() {
+  return <ArrowDropUpIcon className="icon" />;
+}
 
 const actions = ["View", "Send Reminder", "Print"];
 
@@ -659,8 +667,11 @@ const Students = () => {
             autoHeight
             // autoPageSize
             // showLastButton={true}
-            
-         
+
+            components={{
+              ColumnSortedDescendingIcon: SortedDescendingIcon,
+              ColumnSortedAscendingIcon: SortedAscendingIcon,
+            }}
             rows={rows}
             columns={columns}
             pageSize={15}

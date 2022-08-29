@@ -3,3 +3,11 @@
 }
 
 .MuiDataGrid-root .MuiDataGrid-cell {border-bottom: none !important;}
+.MuiDataGrid-sortIcon {
+ opacity: inherit !important;
+}
+
+.MuiDataGrid-iconButtonContainer {
+    visibility: visible;
+    width: 0 !important
+  }

@@ -6,23 +6,23 @@ const FeeChart = () => {
     [
       {
         company: "Jan",
-        type: "Overall",
+        type: "",
         value: 30,
       },
       {
         company: "Feb",
-        type: "Overall",
+        type: "",
         value: 35,
       },
       {
         company: "March",
-        type: "Overall",
+        type: "",
         value: 28,
       },
 
       {
         company: "April",
-        type: "Overall",
+        type: "",
         value: 28,
       },
 

@@ -1,15 +1,26 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button, IconButton, Menu, MenuItem, Stack } from "@mui/material";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import { Box, Typography } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
-
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+
+
+export function SortedDescendingIcon() {
+  return <ArrowDropDownIcon className="icon" />;
+}
+
+export function SortedAscendingIcon() {
+  return <ArrowDropUpIcon className="icon" />;
+}
+
+
 
 const actions = ["View", "Send Reminder", "Print"];
 
@@ -569,9 +580,12 @@ const Invoices = () => {
             display="flex"
             justifyContent="flex-start"
             alignItems="center"
-            sx={{ ml: 3}}
+            sx={{ ml: 3 }}
           >
-            <Typography variant="h5" style={{fontWeight: 600, fontFamily: "sans-serif"}} >
+            <Typography
+              variant="h5"
+              style={{ fontWeight: 600, fontFamily: "sans-serif" }}
+            >
               <p>Outstanding Invoices</p>
             </Typography>
           </Box>
@@ -598,15 +612,11 @@ const Invoices = () => {
               />{" "}
             </FormControl>
 
-            <FormControl
-              sx={{ m: 1, width: "30ch"}}
-              variant="outlined"
-            >
+            <FormControl sx={{ m: 1, width: "26ch" }} variant="outlined">
               <OutlinedInput
                 style={{
                   height: "50px",
                   borderRadius: "7px",
-                  borderColor: "red",
                 }}
                 id="outlined-adornment-weight"
                 placeholder="Filter By Student Id"
@@ -642,11 +652,14 @@ const Invoices = () => {
             autoHeight
             // autoPageSize
             // showLastButton={true}
-
+            GridLinesVisibility="None"
             rows={rows}
             columns={columns}
             pageSize={15}
-            rowsPerPage={15}
+            components={{
+              ColumnSortedDescendingIcon: SortedDescendingIcon,
+              ColumnSortedAscendingIcon: SortedAscendingIcon,
+            }}
             rowsPerPageOptions={[5, 10, 15, 20]}
           />
         </Box>
