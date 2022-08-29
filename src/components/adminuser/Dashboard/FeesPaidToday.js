@@ -497,6 +497,7 @@ export default function FeesPaidToday() {
         </Stack>
         <div>
           <DataGrid
+          pagination
             autoHeight
             // autoPageSize
             // showLastButton={true}
@@ -513,7 +514,7 @@ export default function FeesPaidToday() {
             }}
             rows={rows}
             columns={columns}
-            pageSize={10}
+            
             rowsPerPage={15}
             rowsPerPageOptions={[5, 10, 15, 20]}
           />

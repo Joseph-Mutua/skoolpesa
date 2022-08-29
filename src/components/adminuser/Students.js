@@ -4,7 +4,7 @@ import { Button, IconButton, Menu, MenuItem } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
-import { Box, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AddIcon from "@mui/icons-material/Add";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -64,7 +64,7 @@ const Students = () => {
 
     {
       field: "actions",
-      headerName: "Actions",
+      headerName: "Action",
       width: 100,
       renderCell: (params) => {
         console.log(params);
@@ -608,59 +608,56 @@ const Students = () => {
           borderColor: "#FFFFFF",
         }}
       >
-        <Typography
-          display="flex"
-          justifyContent="flex-start"
-          alignItems="center"
-          sx={{ ml: 3 }}
-        >
-          <p>Find all Students By Class or Stream</p>
-        </Typography>
-        <Box
-          m={1}
-          display="flex"
-          justifyContent="flex-end"
-          alignItems="flex-end"
-        >
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-            <OutlinedInput
-              style={{
-                maxWidth: "250px",
-                maxHeight: "40px",
-                minWidth: "50px",
-                minHeight: "30px",
-              }}
-              id="outlined-adornment-weight"
-              placeholder="Search For a Student"
-              aria-describedby="outlined-weight-helper-text"
-              inputProps={{
-                "aria-label": "weight",
-              }}
-            />{" "}
-          </FormControl>
+        <Stack direction="row" display="flex" justifyContent="space-between">
+          <Typography
+            display="flex"
+            justifyContent="flex-start"
+            alignItems="center"
+            sx={{ ml: 3, mt: 3 }}
+          >
+            <p>Find all Students By Class or Stream</p>
+          </Typography>
+          <Box display="flex" justifyContent="flex-end" alignItems="flex-end">
+            <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+              <OutlinedInput
+                style={{
+                  maxWidth: "250px",
+                  maxHeight: "40px",
+                  minWidth: "50px",
+                  minHeight: "30px",
+                }}
+                id="outlined-adornment-weight"
+                placeholder="Search For a Student"
+                aria-describedby="outlined-weight-helper-text"
+                inputProps={{
+                  "aria-label": "weight",
+                }}
+              />{" "}
+            </FormControl>
 
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-            <OutlinedInput
-              style={{
-                maxWidth: "250px",
-                maxHeight: "40px",
-                minWidth: "50px",
-                minHeight: "30px",
-              }}
-              id="outlined-adornment-weight"
-              placeholder="Filter By Class/Stream"
-              endAdornment={
-                <InputAdornment position="end">
-                  <ArrowDropDownIcon />
-                </InputAdornment>
-              }
-              aria-describedby="outlined-weight-helper-text"
-              inputProps={{
-                "aria-label": "weight",
-              }}
-            />{" "}
-          </FormControl>
-        </Box>
+            <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+              <OutlinedInput
+                style={{
+                  maxWidth: "250px",
+                  maxHeight: "40px",
+                  minWidth: "50px",
+                  minHeight: "30px",
+                }}
+                id="outlined-adornment-weight"
+                placeholder="Filter By Class/Stream"
+                endAdornment={
+                  <InputAdornment position="end">
+                    <ArrowDropDownIcon />
+                  </InputAdornment>
+                }
+                aria-describedby="outlined-weight-helper-text"
+                inputProps={{
+                  "aria-label": "weight",
+                }}
+              />{" "}
+            </FormControl>
+          </Box>
+        </Stack>
 
         <Box sx={{ p: 5 }}>
           <DataGrid

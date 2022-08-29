@@ -12,6 +12,7 @@ const SchoolFeeChart = () => {
       <Grid container columnSpacing={{ xs: 4, sm: 2, md: 3 }} sx={{}}>
         <Grid xs={9}>
           <Box sx={{ boxShadow: 2, p: 5, height: "500px" }}>
+
             <Box display="flex">
               <Typography
                 align="center"
@@ -25,7 +26,15 @@ const SchoolFeeChart = () => {
               >
                 <h4>Amount of School Fees Paid</h4>
               </Typography>
+
+
+
+
             </Box>
+            <Box></Box>
+
+
+
             <Box>
          
               <FeeChart />
