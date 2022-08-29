@@ -107,19 +107,7 @@ const SchoolFeeChart = () => {
                 }}
               >
                 <p>
-                  Number of Students <br></br>with{" "}
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      textDecoration: "underline",
-                      fontWeight: 600,
-           
-                    }}
-                    display="inline"
-                  >
-                    Paid Up
-                  </Typography>{" "}
-                  Fees
+                  Number of Students <br></br>with{" "}Paid Up Fees
                 </p>
               </Typography>
             </Box>

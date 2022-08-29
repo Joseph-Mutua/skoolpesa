@@ -146,7 +146,7 @@ const AdminNav = () => {
                   display: "block",
                   "&:hover,&:focus": {
                     
-                    backgroundColor: "none",
+                    backgroundColor: "rgba(255,255,255, .1)",
                   },
                 }}
               >
