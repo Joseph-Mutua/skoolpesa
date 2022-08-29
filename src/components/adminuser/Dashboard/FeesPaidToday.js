@@ -515,7 +515,7 @@ export default function FeesPaidToday() {
             rows={rows}
             columns={columns}
             
-            rowsPerPage={15}
+            pageSize={15}
             rowsPerPageOptions={[5, 10, 15, 20]}
           />
         </div>

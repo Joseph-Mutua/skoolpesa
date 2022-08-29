@@ -12,6 +12,18 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 
+// import Tab from "@mui/material/Tab";
+// import TabContext from "@mui/lab/TabContext";
+// import TabList from "@mui/lab/TabList";
+// import TabPanel from "@mui/lab/TabPanel";
+// import Tabs from '@material-ui/core/Tabs';
+// import Tab from '@material-ui/core/Tab';
+
+// import { twitterTabsStylesHook } from '@mui-treasury/styles/tabs';
+
+
+
+
 export function SortedDescendingIcon() {
   return <ArrowDropDownIcon className="icon" />;
 }
@@ -26,6 +38,12 @@ const actions = ["View", "Send Reminder", "Print"];
 
 const Invoices = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+    // const [tabIndex, setTabIndex] = React.useState(0);
+
+
+    
+    // const tabsStyles = twitterTabsStylesHook.useTabs();
+    // const tabItemStyles = twitterTabsStylesHook.useTabItem();
 
   const handleOpenMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -580,7 +598,7 @@ const Invoices = () => {
             display="flex"
             justifyContent="flex-start"
             alignItems="center"
-            sx={{ ml: 3, mt:4}}
+            sx={{ ml: 3, mt: 4 }}
           >
             <Typography
               variant="h5"
@@ -647,6 +665,10 @@ const Invoices = () => {
             </Button>
           </Box>
         </Stack>
+
+        <Box>
+
+        </Box>
 
         <Box sx={{ p: 5 }}>
           <DataGrid
