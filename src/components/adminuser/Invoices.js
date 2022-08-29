@@ -580,7 +580,7 @@ const Invoices = () => {
             display="flex"
             justifyContent="flex-start"
             alignItems="center"
-            sx={{ ml: 3 }}
+            sx={{ ml: 3, mt:4}}
           >
             <Typography
               variant="h5"
@@ -592,6 +592,7 @@ const Invoices = () => {
 
           <Box
             m={1}
+            mt={3}
             display="flex"
             justifyContent="flex-end"
             alignItems="center"

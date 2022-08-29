@@ -671,8 +671,7 @@ const Students = () => {
             }}
             rows={rows}
             columns={columns}
-            pageSize={15}
-            rowsPerPage={15}
+            pagination
             rowsPerPageOptions={[5, 10, 15, 20]}
           />
         </Box>
