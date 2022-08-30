@@ -1,18 +1,37 @@
-import React from "react";
-import { Box, Stack, Typography, Divider, useTheme } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Stack, Typography, Divider, useTheme, Button } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import TextField from "@mui/material/TextField";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 
 const Fees = () => {
-  const  theme  = useTheme();
-    const [year, setYear] = React.useState(0);
+  const theme = useTheme();
+  const [year, setYear] = useState(0);
+  const [feeType, setFeeType] = useState(null);
+  const [feeAmount, setFeeAmount] = useState(null);
+  const [activity, setActivity] = useState('active');
 
-    const handleChange = (event) => {
-      setYear(event.target.value);
-    };
+  const handleActivityChange = (event) => {
+    setActivity(event.target.value);
+  };
+
+  const handleChange = (event) => {
+    setYear(event.target.value);
+  };
+
+  const handleFeeTypeChange = (event) => {
+    setFeeType(event.target.value);
+  };
+
+  const handleFeeAmountChange = (event) => {
+    setFeeAmount(event.target.value);
+  };
 
   return (
     <Box
@@ -56,7 +75,7 @@ const Fees = () => {
           </Stack>
         </Box>
 
-        <Box sx={{pr:5}}>
+        <Box sx={{ pr: 5 }}>
           {" "}
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small">Year</InputLabel>
@@ -88,7 +107,82 @@ const Fees = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Box>Add Fee Type Box</Box>
+          <Box sx={{ ml: 5 }}>
+            <Stack>
+              <Box display="flex" sx={{  mb: -1}}>
+                <Typography fontWeight="500">
+                  <p>Add Fee Type</p>
+                </Typography>
+              </Box>
+              <Box sx={{ mt: 1, borderRadius: 2 }}>
+                <Box display="flex" sx={{ mb: -1 }}>
+                  <Typography>
+                    <p>Fee Type</p>
+                  </Typography>{" "}
+                </Box>
+
+                <TextField
+                  size="small"
+                  sx={{ width: "30ch" }}
+                  value={feeType}
+                  onChange={handleFeeTypeChange}
+                  id="demo-helper-text-misaligned"
+                  label="Fee Type"
+                />
+              </Box>
+
+              <Box sx={{ mt: 2 }}>
+                <Box display="flex" sx={{ mb: -1 }}>
+                  <Typography>
+                    <p>Amount</p>
+                  </Typography>
+                </Box>
+
+                <TextField
+                  value={feeAmount}
+                  onChange={handleFeeAmountChange}
+                  size="small"
+                  sx={{ width: "30ch" }}
+                  id="demo-helper-text-misaligned"
+                  label="$0.00"
+                />
+              </Box>
+
+              <Box>
+                {" "}
+                <FormControl>
+                  <Box
+                    display="flex"
+                    justifyContent="space-between"
+                    sx={{ mt: 2 }}
+                  >
+                    <RadioGroup
+                      row
+                      aria-labelledby="demo-controlled-radio-buttons-group"
+                      name="controlled-radio-buttons-group"
+                      value={activity}
+                      onChange={handleActivityChange}
+                    >
+                      <FormControlLabel
+                        value="female"
+                        control={<Radio />}
+                        label="Active"
+                      />
+                      <FormControlLabel
+                        value="male"
+                        control={<Radio />}
+                        label="Inactive"
+                      />
+                    </RadioGroup>
+                  </Box>
+                </FormControl>
+              </Box>
+
+              <Box display="flex" sx={{mt: 5}}>
+                <Button variant="contained">ADD NEW FEE</Button>
+              </Box>
+            </Stack>
+          </Box>
           <Divider variant="middle"></Divider>
           <Box>List of All Fee Types</Box>
         </Stack>
