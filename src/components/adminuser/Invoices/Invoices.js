@@ -51,7 +51,7 @@ const Invoices = () => {
   };
 
   return (
-    <Box>
+    <Box >
       <Box
         sx={{
           bgcolor: "background.paper",
@@ -69,7 +69,7 @@ const Invoices = () => {
           >
             <Typography
               variant="h5"
-              style={{ fontWeight: 600, fontFamily: "sans-serif" }}
+              style={{ fontWeight: 600}}
             >
               <p>Outstanding Invoices</p>
             </Typography>
@@ -98,7 +98,7 @@ const Invoices = () => {
               />{" "}
             </FormControl>
 
-            <FormControl sx={{ m: 1, width: "26ch" }} variant="outlined">
+            <FormControl sx={{ m: 1, maxWidth: "26ch" }} variant="outlined">
               <OutlinedInput
                 style={{
                   height: "50px",
@@ -120,7 +120,8 @@ const Invoices = () => {
 
             <Button
               sx={{
-                width: "220px",
+                display: "flex",
+                maxWidth: "220px",
                 height: "50px",
                 textDecoration: "none",
                 borderRadius: "7px",
