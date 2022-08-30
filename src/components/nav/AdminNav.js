@@ -32,7 +32,6 @@ const AdminNav = () => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-
   };
 
   const handleCloseUserMenu = () => {
@@ -144,10 +143,9 @@ const AdminNav = () => {
                   my: 2,
                   mr: 2,
                   display: "block",
-                  "&:hover,&:focus": {
-                    
-                    backgroundColor: "rgba(255,255,255, .1)",
-                  },
+                  "&:hover": { backgroundColor: "blue" },
+                  "&:focus": { backgroundColor: "yellow" },
+                  "&:active": { backgroundColor: "green" },
                 }}
               >
                 <Link

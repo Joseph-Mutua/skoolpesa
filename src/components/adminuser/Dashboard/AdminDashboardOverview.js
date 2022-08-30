@@ -2,6 +2,8 @@ import * as React from "react";
 import { Stack, Box, Typography } from "@mui/material";
 import { FormControl, OutlinedInput, Grid, InputAdornment } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+
+
 const AdminDashboardOverview = () => {
   return (
     <Box
@@ -13,7 +15,7 @@ const AdminDashboardOverview = () => {
         borderRadius: 2,
 
         background:
-          "linear-gradient(90deg, rgba(36,93,163,1) 0%, rgba(117,170,203,1) 50%, rgba(36,93,163,1) 100%)",
+          "linear-gradient(90deg, rgba(41,95,171,1) 0%, rgba(114,188,213,1) 50%, rgba(41,95,171,1) 100%)",
       }}
     >
       <Grid container spacing={4}>
