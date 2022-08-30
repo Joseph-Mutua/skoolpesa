@@ -1,3 +1,4 @@
+import React from "react"
 import "./App.css";
 import Container from "@mui/material/Container";
 import { Route, Routes } from "react-router-dom";
@@ -10,7 +11,7 @@ import AdminDashboard from "./components/adminuser/Dashboard/AdminDashboard";
 import Invoices from "./components/adminuser/Invoices/Invoices";
 import InvoicesTable from "./components/adminuser/Invoices/InvoicesTable";
 
-import Fees from "./components/adminuser/Fees";
+import Fees from "./components/adminuser/Fees/Fees";
 import Reports from "./components/adminuser/Reports";
 import Students from "./components/adminuser/Students";
 import Users from "./components/adminuser/Users";

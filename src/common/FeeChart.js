@@ -1,3 +1,4 @@
+import React from "react";
 import { Mix } from "@ant-design/plots";
 import { each } from "@antv/util";
 

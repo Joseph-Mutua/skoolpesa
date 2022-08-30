@@ -6,6 +6,8 @@ const theme = createTheme({
     primary: {
       main: "#295fab",
       light: "#72bcd5",
+      darkButton: "#DEE8F7",
+      // dark: "#a3bac2",
     },
   },
   typography: {
