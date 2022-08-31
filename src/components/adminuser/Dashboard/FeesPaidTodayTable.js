@@ -27,7 +27,7 @@ export function SortedAscendingIcon() {
 }
 const actions = ["View", "Send Reminder", "Print"];
 
-export default function FeesPaidToday() {
+export default function FeesPaidTodayTable() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenMenu = (event) => {

@@ -1,14 +1,14 @@
 import React from "react";
 import AdminDashboardOverview from "./AdminDashboardOverview";
 import SchoolFeeChart from "./SchoolFeeChart";
-import FeesPaidToday from "./FeesPaidToday";
+import FeesPaidTodayTable from './FeesPaidTodayTable';
 
 const Dashboard = () => {
   return (
     <div>
       <AdminDashboardOverview />
       <SchoolFeeChart />
-      <FeesPaidToday/>
+      <FeesPaidTodayTable/>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import FeeTypesTable from "./FeeTypesTable";
 
 
 const Fees = () => {
@@ -105,11 +106,10 @@ const Fees = () => {
           m={1}
           display="flex"
           justifyContent="space-between"
-          alignItems="center"
         >
           <Box sx={{ ml: 5 }}>
             <Stack>
-              <Box display="flex" sx={{  mb: -1}}>
+              <Box display="flex" sx={{ mb: -1 }}>
                 <Typography fontWeight="500">
                   <p>Add Fee Type</p>
                 </Typography>
@@ -178,16 +178,21 @@ const Fees = () => {
                 </FormControl>
               </Box>
 
-              <Box display="flex" sx={{mt: 5}}>
+              <Box display="flex" sx={{ mt: 5 }}>
                 <Button variant="contained">ADD NEW FEE</Button>
               </Box>
             </Stack>
           </Box>
-          <Divider variant="middle"></Divider>
-          <Box>List of All Fee Types</Box>
+          <Divider variant="middle" sx={{color: `${theme.palette.primary.darkButton}`, border: 1, height: "500px", mt:4}}/>
+          <Box>
+            <Box sx={{display: "flex"}}><Typography fontWeight="500"><p>List All the Fee Types</p></Typography></Box>
+            <Box>
+            
+              <FeeTypesTable />
+            </Box>
+          </Box>
         </Stack>
       </Box>
-      <Box></Box>
     </Box>
   );
 };

@@ -1052,7 +1052,7 @@ const rows = [
 
 
   return (
-    <Box>
+    <Box sx={{boxShadow: 0}}>
       <Menu
         id="menu-appbar"
         anchorEl={anchorElNav}
