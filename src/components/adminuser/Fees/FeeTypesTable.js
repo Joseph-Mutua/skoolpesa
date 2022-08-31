@@ -4,8 +4,8 @@ import { DataGrid } from "@mui/x-data-grid";
 import Chip from "@mui/material/Chip";
 import { red, green } from "@mui/material/colors";
 import { Box, IconButton, Typography } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import { useTheme } from "@mui/material";
 
 function getChipProps(params) {
@@ -109,13 +109,13 @@ const columns = [
             sx={{ color: `${theme.palette.primary.main}`, fontSize: "small" }}
             onClick={() => navigate("/admin/fees/123", {})}
           >
-            <EditIcon />
+            <EditOutlinedIcon />
           </IconButton>
           <IconButton
             sx={{ color: "red", fontSize: "small" }}
             onClick={() => console.log(params.id)}
           >
-            <DeleteIcon />
+            <DeleteOutlinedIcon />
           </IconButton>
         </Box>
       );

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { DataGrid } from "@mui/x-data-grid";
+import { useParams, Link, Outlet } from "react-router-dom";
+
 import {
   Button,
   Tab,
   Tabs,
-  IconButton,
+
   Menu,
   MenuItem,
   useTheme,
@@ -18,9 +18,10 @@ import {
 } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AddIcon from "@mui/icons-material/Add";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+
 
 export function SortedDescendingIcon() {
   return <ArrowDropDownIcon className="icon" />;
@@ -49,15 +50,10 @@ const actions = ["View", "Send Reminder", "Print"];
 
 const Users = () => {
   const theme = useTheme();
-    const { userType } = useParams();
+  const { userType } = useParams();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [selectedTab, setSelectedTab] = useState(routes[userType]);
 
-
-
-  const handleOpenMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
 
   const handleCloseMenu = () => {
     setAnchorElNav(null);
@@ -68,7 +64,7 @@ const Users = () => {
   };
 
   return (
-    <>
+    <Box>
       <Menu
         id="menu-appbar"
         anchorEl={anchorElNav}
@@ -99,7 +95,6 @@ const Users = () => {
           mb: -8,
           mt: 4,
           "& button": {
-            bgcolor: "#75AACB",
             borderBottom: 2,
             borderBottomColor: "transparent",
           },
@@ -112,17 +107,21 @@ const Users = () => {
         <Button
           variant="contained"
           sx={{
+            bgcolor: "#75AACB",
             textTransform: "none",
             borderRadius: 0,
             height: "45px",
           }}
           startIcon={<PeopleAltIcon />}
         >
-          All Students(15)
+          All Users (1200)
         </Button>
         <Button
           variant="contained"
+          component={Link}
+          to={"adduser"}
           sx={{
+            bgcolor: "#75AACB",
             textTransform: "none",
             borderRadius: 0,
             height: "45px",
@@ -134,7 +133,7 @@ const Users = () => {
           }
           startIcon={<AddIcon />}
         >
-          Add Student
+          Add User
         </Button>
       </Box>
       <Box
@@ -150,21 +149,21 @@ const Users = () => {
             display="flex"
             justifyContent="flex-start"
             alignItems="center"
-            sx={{ ml: 3, mt: 3 }}
+            sx={{ ml: 1, mt: 3 }}
           >
-            <p>Find all Students By Class or Stream</p>
+            <p>Find all your users' accounts and their associated role</p>
           </Typography>
           <Box display="flex" justifyContent="flex-end" alignItems="flex-end">
             <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
               <OutlinedInput
                 style={{
-                  maxWidth: "250px",
+                  maxWidth: "180px",
                   maxHeight: "40px",
                   minWidth: "50px",
                   minHeight: "30px",
                 }}
                 id="outlined-adornment-weight"
-                placeholder="Search For a Student"
+                placeholder="Search User"
                 aria-describedby="outlined-weight-helper-text"
                 inputProps={{
                   "aria-label": "weight",
@@ -175,13 +174,13 @@ const Users = () => {
             <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
               <OutlinedInput
                 style={{
-                  maxWidth: "250px",
+                  maxWidth: "180px",
                   maxHeight: "40px",
                   minWidth: "50px",
                   minHeight: "30px",
                 }}
                 id="outlined-adornment-weight"
-                placeholder="Filter By Class/Stream"
+                placeholder="Sort By Role"
                 endAdornment={
                   <InputAdornment position="end">
                     <ArrowDropDownIcon />
@@ -282,8 +281,11 @@ const Users = () => {
             />
           </Tabs>
         </Box>
+        <Box display="flex" sx={{ mt: 5 }}>
+          <Outlet />
+        </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 

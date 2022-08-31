@@ -18,7 +18,10 @@ import EditFeeTypeForm from "./components/adminuser/Fees/EditFeeTypeForm";
 
 import Reports from "./components/adminuser/Reports";
 import Students from "./components/adminuser/Students";
-import Users from "./components/adminuser/Users";
+
+// Users Components
+import Users from "./components/adminuser/Users/Users";
+import UserListTable from "./components/adminuser/Users/UserListTable";
 
 function App() {
   return (
@@ -46,14 +49,10 @@ function App() {
 
           {/* USERS COMPONENTS */}
           <Route path="/admin/users" element={<Users />}>
-            {/* <Route index element={<Users/>}>
-              <Route index/>
-              <Route path=":userType"/>
-            </Route> */}
-            <Route path="admin/users/adduser"/>
+            <Route index element={<UserListTable />} />
+            <Route path=":userType" element={<UserListTable />} />
           </Route>
-
-
+          <Route path="/admin/users/adduser" />
         </Routes>
       </Container>
     </div>
