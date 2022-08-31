@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import "./App.css";
 import Container from "@mui/material/Container";
 import { Route, Routes } from "react-router-dom";
@@ -29,18 +29,31 @@ function App() {
           <Route path="/" element={<AdminDashboard />}></Route>
           <Route path="/admin/dashboard" element={<AdminDashboard />}></Route>
           <Route path="/admin/students" element={<Students />}></Route>
+
+          {/* INVOICES COMPONENT */}
           <Route path="/admin/invoices" element={<Invoices />}>
             <Route index element={<InvoicesTable />} />
             <Route path=":invoiceYear" element={<InvoicesTable />} />
           </Route>
 
+          {/* FEES COMPONENTS */}
           <Route path="/admin/fees" element={<Fees />}>
-            <Route index element={<AddFeeTypeForm/>}/>
-            <Route path=":feeTypeID" element={<EditFeeTypeForm/>}/>
+            <Route index element={<AddFeeTypeForm />} />
+            <Route path=":feeTypeID" element={<EditFeeTypeForm />} />
           </Route>
 
           <Route path="/admin/reports" element={<Reports />}></Route>
-          <Route path="/admin/users" element={<Users />}></Route>
+
+          {/* USERS COMPONENTS */}
+          <Route path="/admin/users" element={<Users />}>
+            {/* <Route index element={<Users/>}>
+              <Route index/>
+              <Route path=":userType"/>
+            </Route> */}
+            <Route path="admin/users/adduser"/>
+          </Route>
+
+
         </Routes>
       </Container>
     </div>
