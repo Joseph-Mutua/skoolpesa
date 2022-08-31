@@ -11,7 +11,11 @@ import AdminDashboard from "./components/adminuser/Dashboard/AdminDashboard";
 import Invoices from "./components/adminuser/Invoices/Invoices";
 import InvoicesTable from "./components/adminuser/Invoices/InvoicesTable";
 
+//Fees Components
 import Fees from "./components/adminuser/Fees/Fees";
+import AddFeeTypeForm from "./components/adminuser/Fees/AddFeeTypeForm";
+import EditFeeTypeForm from "./components/adminuser/Fees/EditFeeTypeForm";
+
 import Reports from "./components/adminuser/Reports";
 import Students from "./components/adminuser/Students";
 import Users from "./components/adminuser/Users";
@@ -29,7 +33,12 @@ function App() {
             <Route index element={<InvoicesTable />} />
             <Route path=":invoiceYear" element={<InvoicesTable />} />
           </Route>
-          <Route path="/admin/fees" element={<Fees />}></Route>
+
+          <Route path="/admin/fees" element={<Fees />}>
+            <Route index element={<AddFeeTypeForm/>}/>
+            <Route path=":feeTypeID" element={<EditFeeTypeForm/>}/>
+          </Route>
+
           <Route path="/admin/reports" element={<Reports />}></Route>
           <Route path="/admin/users" element={<Users />}></Route>
         </Routes>

@@ -1,4 +1,5 @@
 import React from "react";
+import {useNavigate} from "react-router-dom"
 import { DataGrid } from "@mui/x-data-grid";
 import Chip from "@mui/material/Chip";
 import { red, green } from "@mui/material/colors";
@@ -37,6 +38,14 @@ function getChipProps(params) {
 
 const FeeTypesTable = () => {
   const theme = useTheme();
+const navigate = useNavigate()
+
+//   const handleEditAction = (event, cellParams) =>{
+//     event.preventDefault();
+//     navigate("")
+//   }
+
+
 const columns = [
   {
     field: "feeType",
@@ -98,7 +107,7 @@ const columns = [
         >
           <IconButton
             sx={{ color: `${theme.palette.primary.main}`, fontSize: "small" }}
-            onClick={() => console.log(params.id)}
+            onClick={() => navigate("/admin/fees/123", {})}
           >
             <EditIcon />
           </IconButton>
