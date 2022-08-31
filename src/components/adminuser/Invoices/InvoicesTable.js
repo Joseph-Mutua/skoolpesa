@@ -1052,7 +1052,7 @@ const rows = [
 
 
   return (
-    <Box sx={{boxShadow: 0}}>
+    <Box sx={{ mt: 5}}>
       <Menu
         id="menu-appbar"
         anchorEl={anchorElNav}
@@ -1074,20 +1074,8 @@ const rows = [
           </MenuItem>
         ))}
       </Menu>
-      ;
-      <Box
-        sx={{
-          bgcolor: "background.paper",
-          boxShadow: 5,
-          mt: 4,
-          borderColor: "#FFFFFF",
-        }}
-      >
-        
-
       
-
-        <Box sx={{  p: 0 }}>
+        <Box sx={{ }}>
           <DataGrid
             autoHeight
             // autoPageSize
@@ -1104,7 +1092,7 @@ const rows = [
             }}
           />
         </Box>
-      </Box>
+    
     </Box>
   );
 };
