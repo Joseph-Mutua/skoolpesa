@@ -3,7 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
   Grid,
-
+  Select,
+  MenuItem,
+  InputLabel,
+  Checkbox,
   Button,
   FormControl,
   InputAdornment,
@@ -98,6 +101,59 @@ const AddUserForm = () => {
                   autoComplete="current-password"
                 />
               </Stack>
+            </Box>
+
+            <Stack direction="row" alignItems="center">
+              <Box>
+                <Typography fontWeight="500">
+                  <p>User Role</p>
+                </Typography>
+              </Box>
+
+              <Box sx={{ m: 5, width: "20ch" }}>
+                {" "}
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">
+                    User Role
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={userRole}
+                    label="UserRole"
+                    // onChange={handleChange}
+                  >
+                    <MenuItem value="admin">Admin</MenuItem>
+                    <MenuItem value="platfromRegistrar">
+                      Platform Registrar
+                    </MenuItem>
+                    <MenuItem value="principal">Principal</MenuItem>
+                    <MenuItem value="accountant">Accountant</MenuItem>
+                    <MenuItem value="viewer">Viewer</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+            </Stack>
+
+            <Stack direction="row" alignItems="center">
+              <Box>
+                <Typography fontWeight="500">
+                  <p>Send Password to Users's email? </p>
+                </Typography>
+              </Box>
+              <Box>
+                <Checkbox />
+              </Box>
+
+              <Box>
+                <Typography fontWeight="500">
+                  <p>Send this password to the new user by email</p>
+                </Typography>
+              </Box>
+            </Stack>
+
+            <Box sx={{ mb: 5 }}>
+              <Button variant="contained">Add User</Button>
             </Box>
           </Box>
           <Box sx={{ width: 500 }}>
