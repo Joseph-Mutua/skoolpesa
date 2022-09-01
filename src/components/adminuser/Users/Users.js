@@ -1,92 +1,18 @@
 import React, { useState } from "react";
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet, useNavigate } from "react-router-dom";
 
-import {
-  Button,
-  Tab,
-  Tabs,
+import { Button, useTheme, InputAdornment, Box } from "@mui/material";
 
-  Menu,
-  MenuItem,
-  useTheme,
-  FormControl,
-  InputAdornment,
-  OutlinedInput,
-  Box,
-  Stack,
-  Typography,
-} from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AddIcon from "@mui/icons-material/Add";
-
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-
-
-export function SortedDescendingIcon() {
-  return <ArrowDropDownIcon className="icon" />;
-}
-
-export function SortedAscendingIcon() {
-  return <ArrowDropUpIcon className="icon" />;
-}
-const actions = ["View", "Send Reminder", "Print"];
-
-
-  const routes = {
-    allusers: 0,
-    adminuser: 1,
-    platformregistrar: 2,
-    accountant: 3,
-    viewer: 4,
-    0: "allusers",
-    1: "adminuser",
-    2: "platformregistrar",
-    3: "accountant",
-    4: "viewer",
-    
-  };
-
 
 const Users = () => {
   const theme = useTheme();
-  const { userType } = useParams();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [selectedTab, setSelectedTab] = useState(routes[userType]);
-
-
-  const handleCloseMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleChange = (event, newValue) => {
-    setSelectedTab(newValue);
-  };
+  const navigate = useNavigate();
 
   return (
     <Box>
-      <Menu
-        id="menu-appbar"
-        anchorEl={anchorElNav}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "right",
-        }}
-        keepMounted
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "left",
-        }}
-        open={Boolean(anchorElNav)}
-        onClose={handleCloseMenu}
-      >
-        {actions.map((action) => (
-          <MenuItem key={action} onClick={handleCloseMenu}>
-            <Typography textAlign="center">{action}</Typography>
-          </MenuItem>
-        ))}
-      </Menu>
-
       <Box
         display="flex"
         justifyContent="flex-start"
@@ -106,6 +32,7 @@ const Users = () => {
       >
         <Button
           variant="contained"
+          onClick={() => navigate("allusers/allusers", {})}
           sx={{
             bgcolor: "#75AACB",
             textTransform: "none",
@@ -118,8 +45,7 @@ const Users = () => {
         </Button>
         <Button
           variant="contained"
-          component={Link}
-          to={"adduser"}
+          onClick={() => navigate("adduser", {})}
           sx={{
             bgcolor: "#75AACB",
             textTransform: "none",
@@ -136,7 +62,9 @@ const Users = () => {
           Add User
         </Button>
       </Box>
-      <Box
+
+      <Outlet />
+      {/* <Box
         sx={{
           bgcolor: "background.paper",
           boxShadow: 5,
@@ -222,7 +150,7 @@ const Users = () => {
                 },
               }}
               component={Link}
-              to={"allusers"}
+              to={"allusers/allusers"}
               label="All (3300)"
             />
 
@@ -236,7 +164,7 @@ const Users = () => {
                 },
               }}
               component={Link}
-              to={"adminuser"}
+              to={"allusers/adminuser"}
               label="Admin (1)"
             />
             <Tab
@@ -249,7 +177,7 @@ const Users = () => {
                 },
               }}
               component={Link}
-              to={"platformregistrar"}
+              to={"allusers/platformregistrar"}
               label="Platform Registrar (10)"
             />
 
@@ -263,7 +191,7 @@ const Users = () => {
                 },
               }}
               component={Link}
-              to={"accountant"}
+              to={"allusers/accountant"}
               label="Accountant (50)"
             />
             <Tab
@@ -276,15 +204,17 @@ const Users = () => {
                 },
               }}
               component={Link}
-              to={"viewer"}
+              to={"allusers/viewer"}
               label="Viewer (3200)"
             />
           </Tabs>
         </Box>
+
+
         <Box display="flex" sx={{ mt: 5 }}>
           <Outlet />
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

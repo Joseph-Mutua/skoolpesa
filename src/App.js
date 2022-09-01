@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Container from "@mui/material/Container";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 // Admin Components
 import AdminNav from "./components/nav/AdminNav";
@@ -16,12 +16,15 @@ import Fees from "./components/adminuser/Fees/Fees";
 import AddFeeTypeForm from "./components/adminuser/Fees/AddFeeTypeForm";
 import EditFeeTypeForm from "./components/adminuser/Fees/EditFeeTypeForm";
 
+//Students Component
+import Students from "./components/adminuser/Students/Students";
 import Reports from "./components/adminuser/Reports";
-import Students from "./components/adminuser/Students";
 
 // Users Components
 import Users from "./components/adminuser/Users/Users";
+import UserList from "./components/adminuser/Users/UserList";
 import UserListTable from "./components/adminuser/Users/UserListTable";
+import AddUserForm from "./components/adminuser/Users/AddUserForm";
 
 function App() {
   return (
@@ -49,10 +52,12 @@ function App() {
 
           {/* USERS COMPONENTS */}
           <Route path="/admin/users" element={<Users />}>
-            <Route index element={<UserListTable />} />
-            <Route path=":userType" element={<UserListTable />} />
+            <Route path="allusers" element={<UserList/>}>
+              <Route path=":userType" element={<UserListTable />} />
+            </Route>
+            <Route index element={<Navigate to="/admin/users/allusers/allusers"/>} />
+            <Route path="adduser" element={<AddUserForm />} />
           </Route>
-          <Route path="/admin/users/adduser" />
         </Routes>
       </Container>
     </div>
