@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Box, Typography, IconButton } from "@mui/material";
-import FeeChart from "../../../common/FeeChart";
+import FeeBarGraph from "../../../common/FeeBarGraph";
 import PaidUpPieChart from "../../../common/PaidUpPieChart";
 
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
@@ -11,7 +11,7 @@ const SchoolFeeChart = () => {
     <Box sx={{ mt: 2 }}>
       <Grid container columnSpacing={{ xs: 4, sm: 2, md: 3 }} sx={{}}>
         <Grid xs={9}>
-          <Box sx={{ boxShadow: 2, p: 5, height: "500px" }}>
+          <Box sx={{ boxShadow: 2, p: 2, height: "550px" }}>
 
             <Box display="flex">
               <Typography
@@ -37,7 +37,7 @@ const SchoolFeeChart = () => {
 
             <Box>
          
-              <FeeChart />
+              <FeeBarGraph />
             </Box>
           </Box>
         </Grid>
