@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <AdminNav />
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" minWidth="md">
         <Routes>
           <Route path="/" element={<AdminDashboard />}></Route>
           <Route path="/admin/dashboard" element={<AdminDashboard />}></Route>
