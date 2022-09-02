@@ -15,7 +15,7 @@ const AdminDashboardOverview = () => {
         borderRadius: 2,
 
         background:
-          "linear-gradient(90deg, rgba(41,95,171,1) 0%, rgba(114,188,213,1) 50%, rgba(41,95,171,1) 100%)",
+          "linear-gradient(270deg, rgba(41,95,171,1) 0%, rgba(114,188,213,1) 50%, rgba(41,95,171,1) 100%)",
       }}
     >
       <Grid container spacing={4}>

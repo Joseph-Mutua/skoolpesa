@@ -22,6 +22,8 @@ import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 
 import FeeBarGraph from "../../common/FeeBarGraph";
+import PaidUpPieChart from "../../common/PaidUpPieChart";
+import FeePaidThroughPieChart from "../../common/FeePaidThrougPieChart";
 
 const Reports = () => {
   const [period, setPeriod] = useState(3);
@@ -247,17 +249,13 @@ const Reports = () => {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Stack sx={{ mt: -2, ml:2 }}>
+                <Stack sx={{ mt: -2, ml: 2 }}>
                   <Box display="flex">
                     <Typography fontWeight="300">
                       <p>Unpaid Invoices</p>
                     </Typography>
                   </Box>{" "}
-                  <Box
-                    sx={{ mt: -2}}
-                    display="flex"
-                    alignItems="flex-start"
-                  >
+                  <Box sx={{ mt: -2 }} display="flex" alignItems="flex-start">
                     <Typography variant="h5" fontWeight="600">
                       893
                     </Typography>
@@ -311,17 +309,13 @@ const Reports = () => {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Stack sx={{ mt: -2, ml:2}}>
+                <Stack sx={{ mt: -2, ml: 2 }}>
                   <Box display="flex" sx={{}}>
                     <Typography fontWeight="300">
                       <p>Total Users</p>
                     </Typography>
                   </Box>{" "}
-                  <Box
-                    sx={{ mt: -2 }}
-                    display="flex"
-                    alignItems="flex-start"
-                  >
+                  <Box sx={{ mt: -2 }} display="flex" alignItems="flex-start">
                     <Typography variant="h5" fontWeight="600">
                       10
                     </Typography>
@@ -366,6 +360,37 @@ const Reports = () => {
             </Box>
           </Stack>
         </Box>
+      </Box>
+
+      <Box sx={{ boxShadow: 5 }}>
+        <Stack
+          direction="row"
+          m={1}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Stack sx={{ mt: 2, ml: 2 }}>
+            <Box>
+              <Typography variant="h5" fontWeight="600">
+                Paid VS Outstanding Invoices
+              </Typography>
+            </Box>
+            <Box sx={{ width: 400 }}>
+              <PaidUpPieChart />
+            </Box>
+          </Stack>
+          <Stack sx={{mr:30, mt:2}}>
+            <Box display="flex">
+              <Typography variant="h5" fontWeight="600">
+                Fees Paid through SkoolPesa
+              </Typography>
+            </Box>
+            <Box sx={{ width: 400 }}>
+              <FeePaidThroughPieChart />
+            </Box>
+          </Stack>
+        </Stack>
       </Box>
     </Box>
   );
