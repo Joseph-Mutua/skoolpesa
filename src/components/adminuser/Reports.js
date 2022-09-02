@@ -17,6 +17,10 @@ import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import CreditScoreIcon from "@mui/icons-material/CreditScore";
+import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
+
 import FeeBarGraph from "../../common/FeeBarGraph";
 
 const Reports = () => {
@@ -182,7 +186,7 @@ const Reports = () => {
                 <Stack sx={{ mt: -2 }}>
                   <Box>
                     <Typography fontWeight="300">
-                      <p>Number of Students</p>
+                      <p>Total Fees Collected</p>
                     </Typography>
                   </Box>{" "}
                   <Box
@@ -191,14 +195,14 @@ const Reports = () => {
                     alignItems="flex-start"
                   >
                     <Typography variant="h5" fontWeight="600">
-                      1,893
+                      $150, 790
                     </Typography>
                   </Box>
                   <Box>
                     <Typography sx={{ display: "inline" }}>
-                      <TrendingUpIcon sx={{ color: "green" }} />
+                      <TrendingDownIcon sx={{ color: "red" }} />
                       <Typography
-                        sx={{ color: "green", display: "inline", fontSize: 14 }}
+                        sx={{ color: "red", display: "inline", fontSize: 14 }}
                       >
                         8.5%
                       </Typography>
@@ -211,7 +215,7 @@ const Reports = () => {
                           pl: 0.3,
                         }}
                       >
-                        Up from Last Month
+                        Down from Last Month
                       </Typography>
                     </Typography>
                   </Box>
@@ -221,11 +225,13 @@ const Reports = () => {
                     sx={{
                       mt: -3,
                       mr: 2,
-                      backgroundColor: "rgba(0, 255, 0, .1 )",
+                      backgroundColor: "rgba(255, 215, 0, .1)",
                       borderRadius: 2,
                     }}
                   >
-                    <SchoolOutlinedIcon sx={{ color: "green", fontSize: 35 }} />
+                    <CreditScoreIcon
+                      sx={{ color: "rgb(255, 215, 0)", fontSize: 35 }}
+                    />
                   </Box>
                 </Stack>
               </Stack>
@@ -241,19 +247,19 @@ const Reports = () => {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Stack sx={{ mt: -2 }}>
-                  <Box>
+                <Stack sx={{ mt: -2, ml:2 }}>
+                  <Box display="flex">
                     <Typography fontWeight="300">
-                      <p>Number of Students</p>
+                      <p>Unpaid Invoices</p>
                     </Typography>
                   </Box>{" "}
                   <Box
-                    sx={{ mt: -2, ml: 2 }}
+                    sx={{ mt: -2}}
                     display="flex"
                     alignItems="flex-start"
                   >
                     <Typography variant="h5" fontWeight="600">
-                      1,893
+                      893
                     </Typography>
                   </Box>
                   <Box>
@@ -283,11 +289,13 @@ const Reports = () => {
                     sx={{
                       mt: -3,
                       mr: 2,
-                      backgroundColor: "rgba(0, 255, 0, .1 )",
+                      backgroundColor: "rgba(255,114,118 .1 )",
                       borderRadius: 2,
                     }}
                   >
-                    <SchoolOutlinedIcon sx={{ color: "green", fontSize: 35 }} />
+                    <ReceiptOutlinedIcon
+                      sx={{ color: "rgb(255,114,118)", fontSize: 35 }}
+                    />
                   </Box>
                 </Stack>
               </Stack>
@@ -303,19 +311,19 @@ const Reports = () => {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Stack sx={{ mt: -2 }}>
-                  <Box>
+                <Stack sx={{ mt: -2, ml:2}}>
+                  <Box display="flex" sx={{}}>
                     <Typography fontWeight="300">
-                      <p>Number of Students</p>
+                      <p>Total Users</p>
                     </Typography>
                   </Box>{" "}
                   <Box
-                    sx={{ mt: -2, ml: 2 }}
+                    sx={{ mt: -2 }}
                     display="flex"
                     alignItems="flex-start"
                   >
                     <Typography variant="h5" fontWeight="600">
-                      1,893
+                      10
                     </Typography>
                   </Box>
                   <Box>
@@ -324,7 +332,7 @@ const Reports = () => {
                       <Typography
                         sx={{ color: "green", display: "inline", fontSize: 14 }}
                       >
-                        8.5%
+                        6.4%
                       </Typography>
                       <Typography
                         noWrap
@@ -345,11 +353,13 @@ const Reports = () => {
                     sx={{
                       mt: -3,
                       mr: 2,
-                      backgroundColor: "rgba(0, 255, 0, .1 )",
+                      backgroundColor: "rgba(41, 95, 171, .1)",
                       borderRadius: 2,
                     }}
                   >
-                    <SchoolOutlinedIcon sx={{ color: "green", fontSize: 35 }} />
+                    <PeopleAltOutlinedIcon
+                      sx={{ color: "rgb(41, 95, 171)", fontSize: 35 }}
+                    />
                   </Box>
                 </Stack>
               </Stack>
