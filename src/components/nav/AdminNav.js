@@ -143,9 +143,9 @@ const AdminNav = () => {
                   my: 2,
                   mr: 2,
                   display: "block",
-                  "&:hover": { backgroundColor: "blue" },
-                  "&:focus": { backgroundColor: "yellow" },
-                  "&:active": { backgroundColor: "green" },
+                  // "&:hover": { backgroundColor: "blue" },
+                  // "&:focus": { backgroundColor: "yellow" },
+                  // "&:active": { backgroundColor: "green" },
                 }}
               >
                 <Link

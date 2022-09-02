@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { useParams, Link, Outlet, useNavigate } from "react-router-dom";
+import React from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
-import { Button, useTheme, InputAdornment, Box } from "@mui/material";
+import { Button, InputAdornment, Box } from "@mui/material";
 
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AddIcon from "@mui/icons-material/Add";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const Users = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
   const navigate = useNavigate();
 
   return (

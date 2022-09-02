@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Stack,
@@ -11,7 +11,7 @@ import {
   OutlinedInput,
   InputAdornment,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+
 import SearchIcon from "@mui/icons-material/Search";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
@@ -26,7 +26,7 @@ import PaidUpPieChart from "../../common/PaidUpPieChart";
 import FeePaidThroughPieChart from "../../common/FeePaidThrougPieChart";
 
 const Reports = () => {
-  const [period, setPeriod] = useState(3);
+  // const [period, setPeriod] = useState(3);
 
   const handleChange = () => {};
 
@@ -65,13 +65,13 @@ const Reports = () => {
                 />{" "}
               </FormControl>
 
-              <FormControl sx={{ ml: 2 }} size="small">
+              <FormControl sx={{ ml: 2, width:120 }} >
                 <InputLabel id="demo-select-small">Period</InputLabel>
                 <Select
                   sx={{ height: "4ch" }}
                   labelId="demo-select-small"
                   id="demo-select-small"
-                  value={period}
+                  // value={period}
                   label="Period"
                   onChange={handleChange}
                 >

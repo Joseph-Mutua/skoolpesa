@@ -1,43 +1,42 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+// import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
-  Grid,
+  
   Select,
   MenuItem,
   InputLabel,
   Checkbox,
   Button,
   FormControl,
-  InputAdornment,
-  OutlinedInput,
+
   Stack,
   Typography,
   TextField,
 } from "@mui/material";
 
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import AddIcon from "@mui/icons-material/Add";
+// import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+// import AddIcon from "@mui/icons-material/Add";
 
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+// import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+// import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 const AddUserForm = () => {
-  const [username, setUsernamme] = useState("");
-  const [firstName, setFristName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [location, setLocation] = useState("");
-  const [password, setPassword] = useState("");
-  const [userRole, setUserRole] = useState("");
-  const [sendPassword, setSendPassword] = useState("");
+  // const [username, setUsernamme] = useState("");
+  // const [firstName, setFristName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [phoneNumber, setPhoneNumber] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [location, setLocation] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [userRole, setUserRole] = useState("");
+  // const [sendPassword, setSendPassword] = useState("");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <Box sx={{ boxShadow: 5, mt: 8.1 }}>
@@ -159,7 +158,7 @@ const AddUserForm = () => {
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={userRole}
+                // value={userRole}
                 label="UserRole"
                 // onChange={handleChange}
               >
