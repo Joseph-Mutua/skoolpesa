@@ -5,12 +5,8 @@ import FeeBarGraph from "../../../common/FeeBarGraph";
 import PaidUpPieChart from "../../../common/PaidUpPieChart";
 
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
+import DateRangePicker from "../../../common/DateRangePicker";
 
-import { DatePicker, Space } from "antd";
-
-// import "antd/dist/antd.css";
-
-const { RangePicker } = DatePicker;
 
 const SchoolFeeChart = () => {
   return (
@@ -39,8 +35,7 @@ const SchoolFeeChart = () => {
               </Typography>
 
               <Box sx={{width: "200px"}}>
-                {" "}
-                {/* <RangePicker /> */}
+                {/* <DateRangePicker/> */}
               </Box>
             </Box>
 
