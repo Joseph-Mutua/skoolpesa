@@ -1,10 +1,16 @@
 import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Stack, Typography, IconButton } from "@mui/material";
 import FeeBarGraph from "../../../common/FeeBarGraph";
 import PaidUpPieChart from "../../../common/PaidUpPieChart";
 
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
+
+import { DatePicker, Space } from "antd";
+
+// import "antd/dist/antd.css";
+
+const { RangePicker } = DatePicker;
 
 const SchoolFeeChart = () => {
   return (
@@ -12,31 +18,35 @@ const SchoolFeeChart = () => {
       <Grid container columnSpacing={{ xs: 4, sm: 2, md: 3 }} sx={{}}>
         <Grid xs={9}>
           <Box sx={{ boxShadow: 2, p: 2, height: "550px" }}>
-
-            <Box display="flex">
+            <Box
+              m={1}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+            >
               <Typography
-                align="center"
-                justifyContent="flex-start"
+                alignItems="center"
+                justifyContent="space-between"
                 variant="h5"
+                fontWeight="600"
                 sx={{
-                  mt: -5,
+                  mt: 2,
                   color: "black",
                   letterSpacing: "0.003rem",
                 }}
               >
-                <h4>Amount of School Fees Paid</h4>
+                <p>Amount of School Fees Paid</p>
               </Typography>
 
-
-
-
+              <Box sx={{width: "200px"}}>
+                {" "}
+                {/* <RangePicker /> */}
+              </Box>
             </Box>
+
             <Box></Box>
 
-
-
             <Box>
-         
               <FeeBarGraph />
             </Box>
           </Box>
@@ -107,11 +117,11 @@ const SchoolFeeChart = () => {
                 }}
               >
                 <p>
-                  Number of Students <br></br>with{" "}Paid Up Fees
+                  Number of Students <br></br>with Paid Up Fees
                 </p>
               </Typography>
             </Box>
-            <Box sx={{ mt: -5, height: "415px"}}>
+            <Box sx={{ mt: -5, height: "415px" }}>
               <PaidUpPieChart />
             </Box>
           </Box>

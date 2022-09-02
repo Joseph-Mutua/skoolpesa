@@ -471,13 +471,17 @@ export default function FeesPaidTodayTable() {
             alignItems="center"
           >
             <FormControl
-              sx={{ m: 1, width: "60ch", backgroundColor: "#E3FAFB" }}
+              sx={{
+                
+                width: "60ch",
+
+                backgroundColor: "rgba(227, 250, 251, .5)",
+              }}
               variant="outlined"
             >
               <OutlinedInput
                 style={{
                   height: "50px",
-
                   borderRadius: "7px",
                 }}
                 id="outlined-adornment-weight"
@@ -487,17 +491,14 @@ export default function FeesPaidTodayTable() {
                     <SearchIcon />
                   </InputAdornment>
                 }
-                aria-describedby="outlined-weight-helper-text"
-                inputProps={{
-                  "aria-label": "weight",
-                }}
-              />{" "}
+ 
+              />
             </FormControl>
           </Box>
         </Stack>
         <div>
           <DataGrid
-          pagination
+            pagination
             autoHeight
             // autoPageSize
             // showLastButton={true}
@@ -514,7 +515,6 @@ export default function FeesPaidTodayTable() {
             }}
             rows={rows}
             columns={columns}
-            
             pageSize={15}
             rowsPerPageOptions={[5, 10, 15, 20]}
           />

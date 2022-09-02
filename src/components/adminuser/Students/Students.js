@@ -1,5 +1,5 @@
 import * as React from "react";
-import { DataGrid,} from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { Button, IconButton, Menu, MenuItem } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
