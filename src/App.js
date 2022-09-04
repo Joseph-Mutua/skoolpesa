@@ -5,26 +5,27 @@ import { Route, Routes, Navigate } from "react-router-dom";
 
 // Admin Components
 import AdminNav from "./components/nav/AdminNav";
-import AdminDashboard from "./components/adminuser/Dashboard/AdminDashboard";
+import AdminDashboard from "./components/school/Dashboard/AdminDashboard";
 
 // Invoices Components
-import Invoices from "./components/adminuser/Invoices/Invoices";
-import InvoicesTable from "./components/adminuser/Invoices/InvoicesTable";
+import Invoices from "./components/school/Invoices/Invoices";
+import InvoicesTable from "./components/school/Invoices/InvoicesTable";
+import CreateNewInvoice from "./components/school/Invoices/CreateNewInvoice";
 
 //Fees Components
-import Fees from "./components/adminuser/Fees/Fees";
-import AddFeeTypeForm from "./components/adminuser/Fees/AddFeeTypeForm";
-import EditFeeTypeForm from "./components/adminuser/Fees/EditFeeTypeForm";
+import Fees from "./components/school/Fees/Fees";
+import AddFeeTypeForm from "./components/school/Fees/AddFeeTypeForm";
+import EditFeeTypeForm from "./components/school/Fees/EditFeeTypeForm";
 
 //Students Component
-import Students from "./components/adminuser/Students/Students";
-import Reports from "./components/adminuser/Reports";
+import Students from "./components/school/Students/Students";
+import Reports from "./components/school/Reports";
 
 // Users Components
-import Users from "./components/adminuser/Users/Users";
-import UserList from "./components/adminuser/Users/UserList";
-import UserListTable from "./components/adminuser/Users/UserListTable";
-import AddUserForm from "./components/adminuser/Users/AddUserForm";
+import Users from "./components/school/Users/Users";
+import UserList from "./components/school/Users/UserList";
+import UserListTable from "./components/school/Users/UserListTable";
+import AddUserForm from "./components/school/Users/AddUserForm";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route index element={<InvoicesTable />} />
             <Route path=":invoiceYear" element={<InvoicesTable />} />
           </Route>
+          <Route path="admin/invoices/create-new-invoice" element={<CreateNewInvoice />} />
 
           {/* FEES COMPONENTS */}
           <Route path="/admin/fees" element={<Fees />}>
@@ -52,10 +54,13 @@ function App() {
 
           {/* USERS COMPONENTS */}
           <Route path="/admin/users" element={<Users />}>
-            <Route path="allusers" element={<UserList/>}>
+            <Route path="allusers" element={<UserList />}>
               <Route path=":userType" element={<UserListTable />} />
             </Route>
-            <Route index element={<Navigate to="/admin/users/allusers/allusers"/>} />
+            <Route
+              index
+              element={<Navigate to="/admin/users/allusers/allusers" />}
+            />
             <Route path="adduser" element={<AddUserForm />} />
           </Route>
         </Routes>

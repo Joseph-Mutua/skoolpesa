@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTheme } from "@mui/material/styles";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams, useNavigate } from "react-router-dom";
 
 import { Button, Stack } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
@@ -29,6 +29,7 @@ const Invoices = () => {
   const { invoiceYear } = useParams();
 
   const theme = useTheme();
+  const navigate = useNavigate()
 
 
   const routes = {
@@ -49,6 +50,8 @@ const Invoices = () => {
   const handleChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
+
+
 
   return (
     <Box >
@@ -128,6 +131,7 @@ const Invoices = () => {
               }}
               variant="contained"
               startIcon={<AddIcon />}
+              onClick={() => navigate("create-new-invoice", {})}
             >
               Create New Invoice
             </Button>
