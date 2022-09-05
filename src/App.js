@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import { Route, Routes, Navigate } from "react-router-dom";
 
 // Admin Components
-import AdminNav from "./components/nav/AdminNav";
+import AdminNav from "./components/school/nav/SchoolNav";
 import AdminDashboard from "./components/school/Dashboard/AdminDashboard";
 
 // Invoices Components

@@ -22,6 +22,7 @@ const settings = ["View Profile", "Logout", "Deactivate Account"];
 const AdminNav = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [active, setActive] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -32,6 +33,7 @@ const AdminNav = () => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+    setActive(!active);
   };
 
   const handleCloseUserMenu = () => {
@@ -44,7 +46,11 @@ const AdminNav = () => {
         <Toolbar disableGutters>
           {/* SKOOLPESA LOGO ON SCREEN SIZE ABOVE MD */}
 
-          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+          <Box
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            component={Link}
+            to={"/admin/dashboard"}
+          >
             <img
               alt="SkoolPesa"
               src={process.env.PUBLIC_URL + "/images/logo.png"}
@@ -106,6 +112,8 @@ const AdminNav = () => {
           {/* SKOOLPESA LOGO ON SCREEN SIZE BELOW MD*/}
 
           <Box
+            component={Link}
+            to={"/admin/dashboard"}
             sx={{
               display: { xs: "flex", md: "none" },
             }}
@@ -136,20 +144,27 @@ const AdminNav = () => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
+                backgroundColor={active ? "red" : "white"}
                 sx={{
                   fontSize: "1rem",
                   textTransform: "none",
+
                   color: "white",
                   my: 2,
                   mr: 2,
                   display: "block",
+
                   // "&:hover": { backgroundColor: "blue" },
                   // "&:focus": { backgroundColor: "yellow" },
-                  // "&:active": { backgroundColor: "green" },
+                  // "&:active": { backgroundColor: "red" },
                 }}
               >
                 <Link
-                  style={{ textDecoration: "none", color: "white" }}
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    // backgroundColor: active ? "red" : "none",
+                  }}
                   to={`/admin/${page}`}
                 >
                   {page}
