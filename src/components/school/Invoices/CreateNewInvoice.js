@@ -140,7 +140,9 @@ const CreateNewInvoice = () => {
 
   const [date, setDate] = React.useState(null);
   const [currency, setCurrency] = React.useState("USD");
-  const [invoiceDescription, setInvoiceDescription] = React.useState("Form 1 Term 1")
+  const [invoiceDescription, setInvoiceDescription] = React.useState(
+    "Form 1 Term 1"
+  );
 
   const theme = useTheme();
 
@@ -215,7 +217,7 @@ const CreateNewInvoice = () => {
 
       <Box display="flex" sx={{ mt: 2, ml: 25 }}>
         <TextField
-          sx={{ width: "55ch", borderRadius: 2 }}
+          sx={{ width: "70ch", borderRadius: 2 }}
           id="outlined-basic"
           label="Bill From"
           value="ST.THOMAS HIGH SCHOOL"
@@ -350,7 +352,6 @@ const CreateNewInvoice = () => {
               label="Select"
               value={invoiceDescription}
               onChange={(newValue) => setInvoiceDescription(newValue)}
-              
             >
               {invoiceDescriptions.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
@@ -381,6 +382,14 @@ const CreateNewInvoice = () => {
             />
           </Stack>
         </Stack>
+        <Box display="flex" sx={{ ml: 25, mb: 5, mt: 5 }}>
+          <Button variant="outlined" size="large">
+            Cancel
+          </Button>
+          <Button sx={{ ml: 4 }} variant="contained" size="large">
+            Done
+          </Button>
+        </Box>
       </Stack>
     </Box>
   );
