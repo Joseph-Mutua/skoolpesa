@@ -17,8 +17,12 @@ import Fees from "./components/school/Fees/Fees";
 import AddFeeTypeForm from "./components/school/Fees/AddFeeTypeForm";
 import EditFeeTypeForm from "./components/school/Fees/EditFeeTypeForm";
 
-//Students Component
+//Students Components
 import Students from "./components/school/Students/Students";
+import StudentsNav from "./components/school/Students/StudentsNav";
+import AddStudentForm from "./components/school/Students/AddStudentForm";
+
+// Reports Components
 import Reports from "./components/school/Reports";
 
 // Users Components
@@ -35,14 +39,27 @@ function App() {
         <Routes>
           <Route path="/" element={<AdminDashboard />}></Route>
           <Route path="/admin/dashboard" element={<AdminDashboard />}></Route>
-          <Route path="/admin/students" element={<Students />}></Route>
+
+          {/* STUDENTS COMPONENT */}
+          <Route path="/admin/students" element={<StudentsNav />}>
+            <Route path="all-students" element={<Students />} />
+            <Route index element={<Students />} />
+            <Route path="add-student" element={<AddStudentForm />} />
+            <Route
+              index
+              element={<Navigate to="/admin/students/all-students" />}
+            />
+          </Route>
 
           {/* INVOICES COMPONENT */}
           <Route path="/admin/invoices" element={<Invoices />}>
             <Route index element={<InvoicesTable />} />
             <Route path=":invoiceYear" element={<InvoicesTable />} />
           </Route>
-          <Route path="admin/invoices/create-new-invoice" element={<CreateNewInvoice />} />
+          <Route
+            path="admin/invoices/create-new-invoice"
+            element={<CreateNewInvoice />}
+          />
 
           {/* FEES COMPONENTS */}
           <Route path="/admin/fees" element={<Fees />}>

@@ -11,6 +11,8 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
+import { Link, useNavigate } from "react-router-dom";
+
 export function SortedDescendingIcon() {
   return <ArrowDropDownIcon className="icon" />;
 }
@@ -23,6 +25,7 @@ const actions = ["View", "Send Reminder", "Print"];
 
 const Students = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -564,42 +567,7 @@ const Students = () => {
         ))}
       </Menu>
       ;
-      <Box
-        display="flex"
-        justifyContent="flex-start"
-        alignItems="center"
-        sx={{ mb: -8, mt: 4 }}
-      >
-        <Button
-          variant="contained"
-          sx={{
-            bgcolor: "#245da3",
-            textTransform: "none",
-            borderRadius: 0,
-            height: "45px",
-          }}
-          startIcon={<PeopleAltIcon />}
-        >
-          All Students(15)
-        </Button>
-        <Button
-          variant="contained"
-          sx={{
-            bgcolor: "#75AACB",
-            textTransform: "none",
-            borderRadius: 0,
-            height: "45px",
-          }}
-          endAdornment={
-            <InputAdornment position="end">
-              <ArrowDropDownIcon />
-            </InputAdornment>
-          }
-          startIcon={<AddIcon />}
-        >
-          Add Student
-        </Button>
-      </Box>
+
       <Box
         sx={{
           bgcolor: "background.paper",
