@@ -76,8 +76,8 @@ export default function FeesPaidTodayTable() {
       renderCell: (params) => {
         // console.log(params);
         return (
-          <IconButton>
-            <MoreVertIcon onClick={handleOpenMenu} />
+          <IconButton onClick={handleOpenMenu}>
+            <MoreVertIcon />
           </IconButton>
         );
       },

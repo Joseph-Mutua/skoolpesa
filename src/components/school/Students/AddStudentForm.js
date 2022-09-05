@@ -132,7 +132,7 @@ const AddStudentForm = () => {
               sx={{
                 width: 600,
                 height: 200,
-                backgroundColor: `#E0E8EB`,
+                backgroundColor: `#C0E1EC`,
                 borderRadius: 2,
               }}
             >
