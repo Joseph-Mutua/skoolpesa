@@ -17,7 +17,7 @@ function getChipProps(params) {
         color: green[600],
         borderColor: green[100],
         backgroundColor: green[100],
-        borderRadius: "none",
+        borderRadius: 5,
       },
     };
   } else {
@@ -28,7 +28,7 @@ function getChipProps(params) {
         color: red[600],
         borderColor: red[100],
         backgroundColor: red[100],
-        borderRadius: "none",
+        borderRadius: 5,
       },
     };
   }
