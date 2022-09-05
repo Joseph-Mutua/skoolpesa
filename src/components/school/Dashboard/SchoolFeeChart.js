@@ -1,12 +1,11 @@
 import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Box, Typography, IconButton } from "@mui/material";
-import FeeBarGraph from "../../../common/FeeBarGraph";
-import PaidUpPieChart from "../../../common/PaidUpPieChart";
+import FeeBarGraph from "../../common/FeeBarGraph";
+import PaidUpPieChart from "../../common/PaidUpPieChart";
 
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
-// import DateRangePicker from "../../../common/DateRangePicker";
-
+import RangePicker from "../../common/DateRangePicker";
 
 const SchoolFeeChart = () => {
   return (
@@ -34,8 +33,9 @@ const SchoolFeeChart = () => {
                 <p>Amount of School Fees Paid</p>
               </Typography>
 
-              <Box sx={{width: "200px"}}>
-                {/* <DateRangePicker/> */}
+              <Box sx={{ width: "400px" }}>
+              
+                <RangePicker />
               </Box>
             </Box>
 

@@ -21,9 +21,9 @@ import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 
-import FeeBarGraph from "../../common/FeeBarGraph";
-import PaidUpPieChart from "../../common/PaidUpPieChart";
-import FeePaidThroughPieChart from "../../common/FeePaidThrougPieChart";
+import FeeBarGraph from "../common/FeeBarGraph";
+import PaidUpPieChart from "../common/PaidUpPieChart";
+import FeePaidThroughPieChart from "../common/FeePaidThrougPieChart";
 
 const Reports = () => {
   // const [period, setPeriod] = useState(3);
@@ -102,7 +102,7 @@ const Reports = () => {
         </Box>
       </Box>
       <Box m={1} display="flex" justifyContent="space-between">
-        <Box sx={{ boxShadow: 5, mt: 2, width: 1200, height: 505 }}>
+        <Box sx={{ boxShadow: 2, mt: 2, width: 1200, height: 505 }}>
           <Box display="flex" sx={{ mt: 2, ml: 2 }}>
             <Typography variant="h5" fontWeight="600">
               Total Amount of School Fees Paid
@@ -115,7 +115,7 @@ const Reports = () => {
         <Box sx={{ mt: 2, width: 280 }}>
           <Stack>
             <Box
-              sx={{ ml: 2, mb: 3, boxShadow: 5, borderRadius: 2, height: 110 }}
+              sx={{ ml: 2, mb: 3, boxShadow: 2, borderRadius: 2, height: 110 }}
             >
               <Stack
                 direction="row"
@@ -176,7 +176,7 @@ const Reports = () => {
               </Stack>
             </Box>
             <Box
-              sx={{ ml: 2, mb: 3, boxShadow: 5, borderRadius: 2, height: 110 }}
+              sx={{ ml: 2, mb: 3, boxShadow: 2, borderRadius: 2, height: 110 }}
             >
               <Stack
                 direction="row"
@@ -240,7 +240,7 @@ const Reports = () => {
             </Box>
 
             <Box
-              sx={{ ml: 2, mb: 2, boxShadow: 5, borderRadius: 2, height: 110 }}
+              sx={{ ml: 2, mb: 2, boxShadow: 2, borderRadius: 2, height: 110 }}
             >
               <Stack
                 direction="row"
@@ -300,7 +300,7 @@ const Reports = () => {
             </Box>
 
             <Box
-              sx={{ ml: 2, mb: 2, boxShadow: 5, borderRadius: 2, height: 110 }}
+              sx={{ ml: 2, mb: 2, boxShadow: 2, borderRadius: 2, height: 110 }}
             >
               <Stack
                 direction="row"
@@ -362,7 +362,7 @@ const Reports = () => {
         </Box>
       </Box>
 
-      <Box sx={{ boxShadow: 5 }}>
+      <Box sx={{ boxShadow: 2 }}>
         <Stack
           direction="row"
           m={1}

@@ -44,7 +44,7 @@ export default function FeesPaidTodayTable() {
       headerName: "Student Name",
       width: 450,
       renderCell: (params) => {
-        console.log(params);
+        // console.log(params);
         return (
           <>
             <Avatar src={params.value.avatar} />
@@ -74,7 +74,7 @@ export default function FeesPaidTodayTable() {
       headerName: "Actions",
       width: 100,
       renderCell: (params) => {
-        console.log(params);
+        // console.log(params);
         return (
           <IconButton>
             <MoreVertIcon onClick={handleOpenMenu} />
@@ -425,7 +425,7 @@ export default function FeesPaidTodayTable() {
   // }
 
   return (
-    <Box sx={{ mt: 2, boxShadow: 5, p: 2 }}>
+    <Box sx={{ mt: 2, boxShadow: 2, p: 2 }}>
       <Menu
         id="menu-appbar"
         anchorEl={anchorElNav}

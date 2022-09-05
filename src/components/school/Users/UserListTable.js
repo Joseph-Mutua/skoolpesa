@@ -52,7 +52,7 @@ const UserListTable = () =>{
       headerName: "Account",
       width: 300,
       renderCell: (params) => {
-        console.log(params);
+        // console.log(params);
         return (
           <>
             <Avatar src={params.value.avatar} />

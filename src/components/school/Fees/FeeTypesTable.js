@@ -113,7 +113,7 @@ const columns = [
           </IconButton>
           <IconButton
             sx={{ color: "red", fontSize: "small" }}
-            onClick={() => console.log(params.id)}
+            // onClick={() => console.log(params.id)}
           >
             <DeleteOutlinedIcon />
           </IconButton>

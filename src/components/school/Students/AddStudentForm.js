@@ -14,7 +14,7 @@ import SaveAltIcon from "@mui/icons-material/SaveAlt";
 const AddStudentForm = () => {
   const theme = useTheme();
   return (
-    <Box boxShadow="5" sx={{ mt: 10 }}>
+    <Box boxShadow="2" sx={{ mt: 10 }}>
       <Stack direction="row" sx={{ ml: 20 }}>
         <Stack
           component="form"

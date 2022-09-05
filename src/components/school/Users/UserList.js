@@ -50,7 +50,7 @@ const { userType } = useParams();
     <Box
       sx={{
         bgcolor: "background.paper",
-        boxShadow: 5,
+        boxShadow: 2,
         mt: 8,
         borderColor: "#FFFFFF",
       }}

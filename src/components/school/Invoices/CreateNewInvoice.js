@@ -147,7 +147,7 @@ const CreateNewInvoice = () => {
   const theme = useTheme();
 
   return (
-    <Box boxShadow="5">
+    <Box boxShadow="2">
       <Stack
         direction="row"
         sx={{ mt: 5, ml: 25 }}

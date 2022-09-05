@@ -70,7 +70,7 @@ const Students = () => {
       headerName: "Action",
       width: 100,
       renderCell: (params) => {
-        console.log(params);
+        // console.log(params);
         return (
           <IconButton>
             <MoreVertIcon onClick={handleOpenMenu} />
@@ -571,7 +571,7 @@ const Students = () => {
       <Box
         sx={{
           bgcolor: "background.paper",
-          boxShadow: 5,
+          boxShadow: 2,
           mt: 8,
           borderColor: "#FFFFFF",
         }}

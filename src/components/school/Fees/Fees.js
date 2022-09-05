@@ -20,7 +20,7 @@ const Fees = () => {
     <Box
       sx={{
         bgcolor: "background.paper",
-        boxShadow: 5,
+        boxShadow: 2,
         mt: 4,
         borderColor: "#FFFFFF",
       }}

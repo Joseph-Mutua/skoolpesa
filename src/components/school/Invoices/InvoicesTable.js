@@ -74,7 +74,7 @@ const InvoicesTable = () => {
         headerName: "Actions",
         width: 100,
         renderCell: (params) => {
-          console.log(params);
+          // console.log(params);
           return (
             <IconButton>
               <MoreVertIcon onClick={handleOpenMenu} />

@@ -39,7 +39,7 @@ const AddUserForm = () => {
   // };
 
   return (
-    <Box sx={{ boxShadow: 5, mt: 8.1 }}>
+    <Box sx={{ boxShadow: 2, mt: 8.1 }}>
       <Box display="flex" sx={{ mt: 5, ml: 30 }}>
         <Typography variant="h5" fontWeight="600">
           <p>User Account Details</p>
