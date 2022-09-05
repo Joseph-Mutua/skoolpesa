@@ -7,21 +7,19 @@ import {
   useTheme,
   Button,
   TextField,
+  MenuItem,
   Popover,
 } from "@mui/material";
-import {
-  usePopupState,
-  bindTrigger,
-  bindPopover,
-} from "material-ui-popup-state/hooks";
 
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import PrintOutlinedIcon from "@mui/icons-material/PrintOutlined";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 
-function SettingsPopover(){
+function SettingsPopover() {
   return (
     <Box sx={{ width: 650, height: 400, border: 1, borderRadius: 2 }}>
       <Box display="flex" sx={{ mt: 2, ml: 2 }}>
@@ -78,28 +76,73 @@ function SettingsPopover(){
       </Stack>
     </Box>
   );
-};
+}
+
+const currencies = [
+  {
+    value: "USD",
+    label: "$ -US Dollar",
+  },
+  {
+    value: "EUR",
+    label: "€ Euro",
+  },
+  {
+    value: "BTC",
+    label: "฿ Bitcoin",
+  },
+  {
+    value: "JPY",
+    label: "¥ Japanese Yen",
+  },
+  {
+    value: "KSH",
+    label: "Ksh - Kenyan Shillings",
+  },
+];
+
+const invoiceDescriptions = [
+  {
+    value: "Form 1 Term 1",
+    label: "Form 1 Term 1",
+  },
+  {
+    value: "Form 1 Term 2",
+    label: "Form 1 Term 2",
+  },
+  {
+    value: "Form 1 Term 3",
+    label: "Form 1 Term 3",
+  },
+  {
+    value: "Form 2 Term 1",
+    label: "Form 2 Term 1",
+  },
+  {
+    value: "Form 2 Term 2",
+    label: "Form 2 Term 2",
+  },
+  {
+    value: "Form 2 Term 3",
+    label: "Form 2 Term 3",
+  },
+  {
+    value: "Form 3 Term 1",
+    label: "Form 3 Term 1",
+  },
+];
 
 const CreateNewInvoice = () => {
   const [settingsPopover, setSettingsPopover] = React.useState({
     anchorEl: null,
     child: <SettingsPopover />,
   });
-  const [calendarPopover, setCalendarPopover] = React.useState({
-    anchorEl: null,
-    child: <calendarPopover />,
-  });
+
+  const [date, setDate] = React.useState(null);
+  const [currency, setCurrency] = React.useState("USD");
+  const [invoiceDescription, setInvoiceDescription] = React.useState("Form 1 Term 1")
 
   const theme = useTheme();
-//   const settingsPopState = usePopupState({
-//     variant: "popover",
-//     popupId: "settingsPopover",
-//   });
-
-//   const calendarPopState = usePopupState({
-//     variant: "popover",
-//     popupId: "calendarPopover",
-//   });
 
   return (
     <Box boxShadow="5">
@@ -160,7 +203,7 @@ const CreateNewInvoice = () => {
         </Box>
       </Stack>
 
-      <Box display="flex" sx={{ mt: 10, ml: 25 }}>
+      <Box display="flex" sx={{ mt: 5, ml: 25 }}>
         <Typography variant="h6" fontWeight="500">
           Bill Information
         </Typography>
@@ -225,7 +268,9 @@ const CreateNewInvoice = () => {
               anchorEl={settingsPopover.anchorEl}
               //   {...bindPopover(settingsPopState)}
               open={Boolean(settingsPopover.anchorEl)}
-              onClose={() => setSettingsPopover({ ...settingsPopover, anchorEl: null })}
+              onClose={() =>
+                setSettingsPopover({ ...settingsPopover, anchorEl: null })
+              }
               anchorOrigin={{
                 vertical: "bottom",
                 horizontal: "bottom",
@@ -243,222 +288,97 @@ const CreateNewInvoice = () => {
                 <p>Payment Due Date</p>
               </Typography>
             </Box>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker
+                label="Payment Due Date"
+                value={date}
+                onChange={(newValue) => {
+                  setDate(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
+
+            <Box display="flex" sx={{ mb: -1 }}>
+              <Typography fontWeight="400">
+                <p>Currency</p>
+              </Typography>
+            </Box>
             <TextField
-              required
-              value="07 Dec 2021"
-              InputProps={{
-                endAdornment: (
-                  <IconButton
-                    onClick={() => {}}
-       
-                    edge="end"
-                  >
-                    <CalendarMonthOutlinedIcon
-                      sx={{ color: `${theme.palette.primary.main}` }}
-                    />
-                  </IconButton>
-                ),
-              }}
-            />
-            <Popover
-              id="calendarPopover"
-      
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "bottom",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "center",
-              }}
+              id="outlined-select-currency"
+              select
+              label="Select"
+              value={currency}
+              onChange={(newValue) => setCurrency(newValue)}
+              helperText="Please select your currency"
             >
-              Wooow
-            </Popover>
-
-            <Box display="flex" sx={{ mb: -1 }}>
-              <Typography fontWeight="400">
-                <p>Invoice #</p>
-              </Typography>
-            </Box>
-            <TextField
-              required
-              id="userName"
-              value="INV-0000005"
-              InputProps={{
-                endAdornment: (
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={() => {}}
-                    // {...bindTrigger(settingsPopState)}
-                    edge="end"
-                  >
-                    <SettingsIcon
-                      sx={{ color: `${theme.palette.primary.main}` }}
-                    />
-                  </IconButton>
-                ),
-              }}
-            />
-            <Popover
-              //   {...bindPopover(settingsPopState)}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "bottom",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "center",
-              }}
-            ></Popover>
-
-            <Box display="flex" sx={{ mb: -1 }}>
-              <Typography fontWeight="400">
-                <p>Invoice #</p>
-              </Typography>
-            </Box>
-            <TextField
-              required
-              id="userName"
-              value="INV-0000005"
-              InputProps={{
-                endAdornment: (
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={() => {}}
-                    // {...bindTrigger(settingsPopState)}
-                    edge="end"
-                  >
-                    <SettingsIcon
-                      sx={{ color: `${theme.palette.primary.main}` }}
-                    />
-                  </IconButton>
-                ),
-              }}
-            />
-            <Popover
-              //   {...bindPopover(settingsPopState)}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "bottom",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "center",
-              }}
-            ></Popover>
+              {currencies.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
           </Stack>
 
           <Stack
             component="form"
-            sx={{ "& .MuiTextField-root": { width: "45ch" } }}
+            sx={{ "& .MuiTextField-root": { width: "30ch" } }}
           >
             <Box display="flex" sx={{ mb: -1 }}>
               <Typography fontWeight="400">
-                <p>Invoice #</p>
+                <p>Date</p>
               </Typography>
             </Box>
-            <TextField
-              required
-              id="userName"
-              value="INV-0000005"
-              InputProps={{
-                endAdornment: (
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={() => {}}
-                    // {...bindTrigger(settingsPopState)}
-                    edge="end"
-                  >
-                    <SettingsIcon
-                      sx={{ color: `${theme.palette.primary.main}` }}
-                    />
-                  </IconButton>
-                ),
-              }}
-            />
-            <Popover
-              //{...bindPopover(settingsPopState)}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "bottom",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "center",
-              }}
-            ></Popover>{" "}
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker
+                label="Date"
+                value={date}
+                onChange={(newValue) => {
+                  setDate(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
             <Box display="flex" sx={{ mb: -1 }}>
               <Typography fontWeight="400">
-                <p>Invoice #</p>
+                <p>Description</p>
               </Typography>
             </Box>
             <TextField
-              required
-              id="userName"
-              value="INV-0000005"
-              InputProps={{
-                endAdornment: (
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={() => {}}
-                    // {...bindTrigger(settingsPopState)}
-                    edge="end"
-                  >
-                    <SettingsIcon
-                      sx={{ color: `${theme.palette.primary.main}` }}
-                    />
-                  </IconButton>
-                ),
-              }}
-            />
-            <Popover
-              //{...bindPopover(settingsPopState)}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "bottom",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "center",
-              }}
-            ></Popover>{" "}
-            <Box display="flex" sx={{ mb: -1 }}>
-              <Typography fontWeight="400">
-                <p>Invoice #</p>
-              </Typography>
-            </Box>
-            <TextField
-              required
-              id="userName"
-              value="INV-0000005"
-              InputProps={{
-                endAdornment: (
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={() => {}}
-                    // {...bindTrigger(settingsPopState)}
-                    edge="end"
-                  >
-                    <SettingsIcon
-                      sx={{ color: `${theme.palette.primary.main}` }}
-                    />
-                  </IconButton>
-                ),
-              }}
-            />
-            <Popover
-              //{...bindPopover(settingsPopState)}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "bottom",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "center",
-              }}
+              id="outlined-select-currency"
+              select
+              label="Select"
+              value={invoiceDescription}
+              onChange={(newValue) => setInvoiceDescription(newValue)}
+              
             >
-              {" "}
-            </Popover>
+              {invoiceDescriptions.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+            <Popover
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "bottom",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "center",
+              }}
+            ></Popover>{" "}
+            <Box display="flex" sx={{ mb: -1 }}>
+              <Typography fontWeight="400">
+                <p>Balance Due</p>
+              </Typography>
+            </Box>
+            <TextField
+              id="outlined-basic"
+              label="Balance Due"
+              value="$0.00"
+              variant="outlined"
+            />
           </Stack>
         </Stack>
       </Stack>
