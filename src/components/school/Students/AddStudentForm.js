@@ -6,13 +6,13 @@ import {
   TextField,
   MenuItem,
   Button,
-  useTheme,
+
   Link,
 } from "@mui/material";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 
 const AddStudentForm = () => {
-  const theme = useTheme();
+
   return (
     <Box boxShadow="2" sx={{ mt: 10 }}>
       <Stack direction="row" sx={{ ml: 20 }}>

@@ -1,17 +1,14 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { Button, IconButton, Menu, MenuItem } from "@mui/material";
+import { IconButton, Menu, MenuItem } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import { Box, Stack, Typography } from "@mui/material";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import AddIcon from "@mui/icons-material/Add";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
-import { Link, useNavigate } from "react-router-dom";
 
 export function SortedDescendingIcon() {
   return <ArrowDropDownIcon className="icon" />;
@@ -25,7 +22,7 @@ const actions = ["View", "Send Reminder", "Print"];
 
 const Students = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const navigate = useNavigate();
+
 
   const handleOpenMenu = (event) => {
     setAnchorElNav(event.currentTarget);
